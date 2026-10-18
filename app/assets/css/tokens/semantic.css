@@ -1,0 +1,191 @@
+/*
+ * SEMANTIC TOKENS – the public API of the design system.
+ * Components use THESE TOKENS ONLY.
+ * Values always reference --ref-* primitives.
+ *
+ * Theming: light is the default, dark follows the system setting
+ * and can be forced via <html data-theme="light|dark">.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* Surfaces */
+  --color-bg: var(--ref-neutral-50);
+  --color-bg-subtle: var(--ref-neutral-100);
+  --color-surface: var(--ref-neutral-0);
+  --color-surface-raised: var(--ref-neutral-100);
+  --color-surface-inverse: var(--ref-neutral-900);
+
+  /* Text */
+  --color-text: var(--ref-neutral-900);
+  --color-text-muted: var(--ref-neutral-600);
+  --color-text-on-accent: var(--ref-neutral-0);
+  --color-text-inverse: var(--ref-neutral-50);
+  --color-text-inverse-muted: var(--ref-neutral-300);
+
+  /* Borders */
+  --color-border: var(--ref-neutral-200);
+  --color-border-strong: var(--ref-neutral-400);
+
+  /* Accent / interaction */
+  --color-accent: var(--ref-blue-600);
+  --color-accent-hover: var(--ref-blue-700);
+  --color-accent-subtle: var(--ref-blue-100);
+  --color-focus-ring: var(--ref-blue-500);
+
+  /*
+   * Grammatical gender – the colour code used in German teaching material.
+   * "der" blue, "die" red, "das" green. Text colours pass WCAG AA on --color-bg.
+   */
+  --color-der: var(--ref-blue-600);
+  --color-der-subtle: var(--ref-blue-100);
+  --color-die: var(--ref-red-600);
+  --color-die-subtle: var(--ref-red-100);
+  --color-das: var(--ref-green-600);
+  --color-das-subtle: var(--ref-green-100);
+
+  /* Logo mark (inverts with the theme so it always stands out from the page) */
+  --color-logo-bg: var(--ref-neutral-900);
+  --color-logo-fg: var(--ref-neutral-50);
+  --color-logo-accent: var(--ref-blue-300);
+
+  /* Status */
+  --color-danger: var(--ref-red-500);
+  --color-success: var(--ref-green-500);
+  --color-warning: var(--ref-amber-500);
+
+  /* Spacing */
+  --space-3xs: var(--ref-space-1);
+  --space-2xs: var(--ref-space-2);
+  --space-xs: var(--ref-space-3);
+  --space-sm: var(--ref-space-4);
+  --space-md: var(--ref-space-6);
+  --space-lg: var(--ref-space-8);
+  --space-xl: var(--ref-space-12);
+  --space-2xl: var(--ref-space-16);
+  --space-3xl: var(--ref-space-24);
+  --space-4xl: var(--ref-space-32);
+  --space-section: var(--ref-space-fluid-section);
+
+  /* Typography */
+  --font-body: var(--ref-font-sans);
+  --font-heading: var(--ref-font-slab);
+  --font-code: var(--ref-font-mono);
+
+  --text-xs: var(--ref-font-size-xs);
+  --text-sm: var(--ref-font-size-sm);
+  --text-base: var(--ref-font-size-md);
+  --text-lg: var(--ref-font-size-lg);
+  --text-xl: var(--ref-font-size-xl);
+  --text-h3: var(--ref-font-size-2xl);
+  --text-h2: var(--ref-font-size-3xl);
+  --text-h1: var(--ref-font-size-4xl);
+  --text-display: var(--ref-font-size-5xl);
+
+  --weight-body: var(--ref-font-weight-regular);
+  --weight-medium: var(--ref-font-weight-medium);
+  --weight-strong: var(--ref-font-weight-semibold);
+  --weight-heading: var(--ref-font-weight-semibold);
+  --weight-display: var(--ref-font-weight-bold);
+
+  --leading-display: var(--ref-line-height-display);
+  --leading-heading: var(--ref-line-height-tight);
+  --leading-snug: var(--ref-line-height-snug);
+  --leading-body: var(--ref-line-height-normal);
+
+  --tracking-heading: var(--ref-tracking-tight);
+  --tracking-label: var(--ref-tracking-wide);
+
+  /* Strokes */
+  --stroke-rule: var(--ref-stroke-2);
+  --stroke-bracket: var(--ref-stroke-3);
+  --stroke-marker: var(--ref-stroke-4);
+
+  /* Shape */
+  --radius-control: var(--ref-radius-sm);
+  --radius-card: var(--ref-radius-md);
+  --radius-pill: var(--ref-radius-full);
+
+  --shadow-card: var(--ref-shadow-sm);
+  --shadow-overlay: var(--ref-shadow-lg);
+
+  /* Sizing */
+  --size-control: var(--ref-size-control);
+  --size-icon: var(--ref-size-icon);
+  --size-portrait: var(--ref-size-portrait);
+
+  /* Motion */
+  --transition-fast: var(--ref-duration-fast) var(--ref-easing-standard);
+  --transition-base: var(--ref-duration-normal) var(--ref-easing-standard);
+  --transition-slow: var(--ref-duration-slow) var(--ref-easing-standard);
+  --transition-draw: var(--ref-duration-draw) var(--ref-easing-draw);
+
+  /* Layout */
+  --layout-measure: var(--ref-size-measure);
+  --layout-content: var(--ref-size-content);
+  --layout-wide: var(--ref-size-wide);
+  --layout-gutter: var(--ref-space-fluid-gutter);
+}
+
+/* Dark theme – system preference, unless light is forced */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: var(--ref-neutral-950);
+    --color-bg-subtle: var(--ref-neutral-900);
+    --color-surface: var(--ref-neutral-900);
+    --color-surface-raised: var(--ref-neutral-800);
+    --color-surface-inverse: var(--ref-neutral-100);
+    --color-text: var(--ref-neutral-50);
+    --color-text-muted: var(--ref-neutral-400);
+    --color-text-inverse: var(--ref-neutral-900);
+    --color-text-inverse-muted: var(--ref-neutral-600);
+    --color-border: var(--ref-neutral-800);
+    --color-border-strong: var(--ref-neutral-600);
+    --color-accent: var(--ref-blue-300);
+    --color-accent-hover: var(--ref-blue-100);
+    --color-accent-subtle: var(--ref-blue-800);
+    --color-text-on-accent: var(--ref-neutral-950);
+    --color-der: var(--ref-blue-300);
+    --color-der-subtle: var(--ref-blue-800);
+    --color-die: var(--ref-red-400);
+    --color-die-subtle: var(--ref-red-800);
+    --color-das: var(--ref-green-300);
+    --color-das-subtle: var(--ref-green-800);
+    --color-logo-bg: var(--ref-neutral-100);
+    --color-logo-fg: var(--ref-neutral-900);
+    --color-logo-accent: var(--ref-blue-600);
+  }
+}
+
+/* Dark theme – explicitly forced */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: var(--ref-neutral-950);
+  --color-bg-subtle: var(--ref-neutral-900);
+  --color-surface: var(--ref-neutral-900);
+  --color-surface-raised: var(--ref-neutral-800);
+  --color-surface-inverse: var(--ref-neutral-100);
+  --color-text: var(--ref-neutral-50);
+  --color-text-muted: var(--ref-neutral-400);
+  --color-text-inverse: var(--ref-neutral-900);
+  --color-text-inverse-muted: var(--ref-neutral-600);
+  --color-border: var(--ref-neutral-800);
+  --color-border-strong: var(--ref-neutral-600);
+  --color-accent: var(--ref-blue-300);
+  --color-accent-hover: var(--ref-blue-100);
+  --color-accent-subtle: var(--ref-blue-800);
+  --color-text-on-accent: var(--ref-neutral-950);
+  --color-der: var(--ref-blue-300);
+  --color-der-subtle: var(--ref-blue-800);
+  --color-die: var(--ref-red-400);
+  --color-die-subtle: var(--ref-red-800);
+  --color-das: var(--ref-green-300);
+  --color-das-subtle: var(--ref-green-800);
+  --color-logo-bg: var(--ref-neutral-100);
+  --color-logo-fg: var(--ref-neutral-900);
+  --color-logo-accent: var(--ref-blue-600);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}

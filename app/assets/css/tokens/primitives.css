@@ -1,0 +1,126 @@
+/*
+ * PRIMITIVE TOKENS – raw values of the design system.
+ * Prefix: --ref-*
+ * These tokens are NEVER used directly in components;
+ * they are only referenced from semantic.css.
+ */
+:root {
+  /* Colors: neutral – "exercise book paper" to "ink", slightly blue-tinted (OKLCH) */
+  --ref-neutral-0: oklch(100% 0 0);
+  --ref-neutral-50: oklch(98.4% 0.004 240);
+  --ref-neutral-100: oklch(96% 0.007 240);
+  --ref-neutral-200: oklch(91.5% 0.01 240);
+  --ref-neutral-300: oklch(86% 0.014 240);
+  --ref-neutral-400: oklch(70% 0.02 245);
+  --ref-neutral-500: oklch(55% 0.025 250);
+  --ref-neutral-600: oklch(45% 0.03 252);
+  --ref-neutral-700: oklch(37% 0.032 254);
+  --ref-neutral-800: oklch(28% 0.03 256);
+  --ref-neutral-900: oklch(22% 0.03 258);
+  --ref-neutral-950: oklch(17% 0.026 258);
+  --ref-neutral-1000: oklch(0% 0 0);
+
+  /* Colors: blue – the accent, and the colour for "der" in German teaching material */
+  --ref-blue-100: oklch(94% 0.03 255);
+  --ref-blue-300: oklch(78% 0.1 255);
+  --ref-blue-500: oklch(56% 0.16 255);
+  --ref-blue-600: oklch(49% 0.16 257);
+  --ref-blue-700: oklch(42% 0.14 258);
+  --ref-blue-800: oklch(32% 0.1 258);
+
+  /* Colors: red – "die" */
+  --ref-red-100: oklch(94% 0.03 20);
+  --ref-red-300: oklch(76% 0.12 20);
+  --ref-red-400: oklch(68% 0.15 20);
+  --ref-red-500: oklch(58% 0.21 27);
+  --ref-red-600: oklch(53% 0.19 22);
+  --ref-red-800: oklch(33% 0.1 22);
+
+  /* Colors: green – "das" */
+  --ref-green-100: oklch(94% 0.04 155);
+  --ref-green-300: oklch(78% 0.12 155);
+  --ref-green-500: oklch(63% 0.17 150);
+  --ref-green-600: oklch(50% 0.12 155);
+  --ref-green-800: oklch(32% 0.07 155);
+
+  /* Colors: status */
+  --ref-amber-500: oklch(77% 0.16 75);
+
+  /* Spacing (4px grid) */
+  --ref-space-0: 0;
+  --ref-space-1: 0.25rem;
+  --ref-space-2: 0.5rem;
+  --ref-space-3: 0.75rem;
+  --ref-space-4: 1rem;
+  --ref-space-6: 1.5rem;
+  --ref-space-8: 2rem;
+  --ref-space-12: 3rem;
+  --ref-space-16: 4rem;
+  --ref-space-24: 6rem;
+  --ref-space-32: 8rem;
+  --ref-space-fluid-gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --ref-space-fluid-section: clamp(4rem, 2rem + 6vw, 8rem);
+
+  /* Typography */
+  --ref-font-sans:
+    'Atkinson Hyperlegible Next', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --ref-font-slab: 'Zilla Slab', ui-serif, Rockwell, Georgia, Cambria, serif;
+  --ref-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --ref-font-size-xs: 0.8125rem;
+  --ref-font-size-sm: 0.9375rem;
+  --ref-font-size-md: 1.0625rem;
+  --ref-font-size-lg: 1.25rem;
+  --ref-font-size-xl: 1.5rem;
+  --ref-font-size-2xl: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
+  --ref-font-size-3xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --ref-font-size-4xl: clamp(2.5rem, 1.6rem + 3.4vw, 4rem);
+  --ref-font-size-5xl: clamp(2.375rem, 0.5rem + 3.6vw, 4.25rem);
+
+  --ref-font-weight-regular: 400;
+  --ref-font-weight-medium: 500;
+  --ref-font-weight-semibold: 600;
+  --ref-font-weight-bold: 700;
+
+  --ref-line-height-display: 1.02;
+  --ref-line-height-tight: 1.12;
+  --ref-line-height-snug: 1.35;
+  --ref-line-height-normal: 1.6;
+
+  --ref-tracking-tight: -0.015em;
+  --ref-tracking-wide: 0.02em;
+
+  /* Strokes */
+  --ref-stroke-2: 2px;
+  --ref-stroke-3: 3px;
+  --ref-stroke-4: 4px;
+
+  /* Radii */
+  --ref-radius-none: 0;
+  --ref-radius-sm: 0.25rem;
+  --ref-radius-md: 0.5rem;
+  --ref-radius-lg: 1rem;
+  --ref-radius-full: 9999px;
+
+  /* Shadows */
+  --ref-shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.06);
+  --ref-shadow-md: 0 4px 12px oklch(0% 0 0 / 0.08);
+  --ref-shadow-lg: 0 12px 32px oklch(0% 0 0 / 0.12);
+
+  /* Motion */
+  --ref-duration-fast: 120ms;
+  --ref-duration-normal: 200ms;
+  --ref-duration-slow: 360ms;
+  --ref-duration-draw: 900ms;
+  --ref-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ref-easing-draw: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Layout */
+  --ref-size-measure: 38rem;
+  --ref-size-content: 42rem;
+  --ref-size-wide: 76rem;
+  --ref-size-control: 2.75rem;
+  --ref-size-icon: 1.25rem;
+  --ref-size-portrait: 22rem;
+}

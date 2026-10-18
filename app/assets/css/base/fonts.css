@@ -1,0 +1,59 @@
+/*
+ * Self-hosted web fonts (SIL Open Font License, see /public/fonts).
+ * Served locally so no visitor data is sent to third-party font services (GDPR).
+ */
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/zilla-slab-latin-500-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/zilla-slab-latin-500-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/zilla-slab-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/zilla-slab-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/atkinson-hyperlegible-next-latin-400-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/atkinson-hyperlegible-next-latin-600-normal.woff2') format('woff2');
+}

@@ -1,0 +1,33 @@
+{
+  "name": "paulinestachde",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "typecheck": "nuxt typecheck",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck"
+  },
+  "dependencies": {
+    "nuxt": "^4.6.2",
+    "vue": "^3.5.44",
+    "vue-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.88.0",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.13"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.28.0"
+}

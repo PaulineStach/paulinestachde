@@ -1,0 +1,14 @@
+/*
+ * Design system entry point.
+ * Cascade layer order – later wins:
+ *   reset → tokens → base → components → utilities
+ * Component styles (<style scoped>) are unlayered and
+ * therefore always win over base styles.
+ */
+@layer reset, tokens, base, components, utilities;
+
+@import './base/reset.css' layer(reset);
+@import './tokens/primitives.css' layer(tokens);
+@import './tokens/semantic.css' layer(tokens);
+@import './base/fonts.css' layer(base);
+@import './base/global.css' layer(base);
