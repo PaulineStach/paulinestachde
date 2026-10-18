@@ -99,6 +99,7 @@ If formatting changed files, review and stage those changes as part of the same 
 ```
 app/
   app.vue                 # root component
+  layouts/default.vue     # skip link, header, footer around every page
   pages/                  # file-based routing
   components/             # auto-imported components
   assets/css/
