@@ -99,7 +99,8 @@ If formatting changed files, review and stage those changes as part of the same 
 ```
 app/
   app.vue                 # root component
-  layouts/default.vue     # skip link, header, footer around every page
+  error.vue               # error page (404 and others), replaces app.vue
+  layouts/default.vue     # skip link, header, footer – used by app.vue and error.vue
   pages/                  # file-based routing
   components/             # auto-imported components
   assets/css/
