@@ -49,11 +49,10 @@
   --color-chalk-muted: var(--ref-chalk-muted);
 
   /* Globe beside the hero quote – an illustration, so it keeps its colours in both themes */
-  --color-globe-bg: var(--ref-leaf-800);
-  --color-globe-sphere: var(--ref-leaf-700);
-  --color-globe-line: var(--ref-chalk-a35);
-  --color-globe-arc: var(--ref-leaf-300);
-  --color-globe-text: var(--ref-neutral-0);
+  --color-globe-ocean: var(--ref-leaf-50);
+  --color-globe-line: var(--ref-leaf-100);
+  --color-globe-land: var(--ref-leaf-200);
+  --color-globe-marked: var(--ref-leaf-400);
 
   /*
    * Grammatical gender – the colour code used in German teaching material.
