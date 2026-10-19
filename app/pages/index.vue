@@ -313,9 +313,8 @@ const steps = [
         <div class="material-text">
           <h2 id="material-title">Lernmaterial</h2>
           <p class="text-lg">
-            Übungen für Deutsch im IT-Alltag: Artikel, Satzbau und der richtige Ton in E-Mails.
-            Einen Ausschnitt können Sie ausprobieren – das vollständige Material schalte ich für
-            meine Kunden frei.
+            Kostenlose Übungen für Deutsch im IT-Alltag: Vokabeln mit Artikel und Plural, Satzbau,
+            Verben, Präpositionen in Firmentexten und Redewendungen – frei nutzbar für Ihr Team.
           </p>
           <BaseButton to="/material" variant="quiet">Übungen ausprobieren</BaseButton>
         </div>
