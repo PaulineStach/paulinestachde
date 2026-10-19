@@ -2,7 +2,8 @@
 /*
  * "Satzbau": put the word blocks of a short work sentence in the right order. Each block
  * names its part of the sentence (Verb, Subjekt, Zeitangabe …); verbs are highlighted,
- * because their position is the point of the exercise. Several correct orders are accepted.
+ * because their position is the point of the exercise. Answers are checked against the
+ * word-order rules (checkSentenceOrder), so every grammatical order counts as right.
  */
 const picked = ref<number[][]>(sentenceExercises.map(() => []))
 
@@ -14,17 +15,25 @@ function isComplete(index: number) {
   return picked.value[index]!.length === sentenceExercises[index]!.parts.length
 }
 
+/** null when the order is right, otherwise a hint naming what is out of place */
+function hint(index: number) {
+  return checkSentenceOrder(sentenceExercises[index]!, picked.value[index]!)
+}
+
 function isCorrect(index: number) {
-  const exercise = sentenceExercises[index]!
-  const built = texts(exercise, picked.value[index]!).join('|')
-  return exercise.solutions.some((solution) => solution.join('|') === built)
+  return hint(index) === null
 }
 
 /** The built sentence with a capital first letter and its full stop or question mark */
 function sentence(index: number) {
   const exercise = sentenceExercises[index]!
   const words = texts(exercise, picked.value[index]!).join(' ')
-  return words.charAt(0).toUpperCase() + words.slice(1) + exercise.end
+  return words.charAt(0).toUpperCase() + words.slice(1) + sentenceKinds[exercise.kind].end
+}
+
+/** Both parts of the verb are highlighted: the finite verb and the part that closes the bracket */
+function isVerb(part: SentencePart) {
+  return Boolean(part.finite || part.last)
 }
 
 function display(index: number, position: number, text: string) {
@@ -51,21 +60,23 @@ function restart(index: number) {
     <header class="intro">
       <h3 id="builder-title">Satzbau: Wer steht wo?</h3>
       <p>
-        Tippen Sie die Bausteine in der richtigen Reihenfolge an. Achten Sie auf das
-        <strong class="verb-key">Verb</strong>: Im Aussagesatz steht es an Position 2.
+        Tippen Sie die Bausteine in der richtigen Reihenfolge an – als Aussage oder als Frage, wie
+        angegeben. Achten Sie auf das <strong class="verb-key">Verb</strong>.
       </p>
     </header>
 
     <ol class="items">
       <li v-for="(exercise, index) in sentenceExercises" :key="index" class="item">
-        <p class="label">Satz {{ index + 1 }}</p>
+        <p class="label">
+          Satz {{ index + 1 }}: <span class="kind">{{ sentenceKinds[exercise.kind].label }}</span>
+        </p>
 
         <ol class="answer" :aria-label="`Ihr Satz ${index + 1}`">
           <li v-for="(part, position) in picked[index]" :key="part">
             <button
               type="button"
               class="block block--placed"
-              :class="{ 'block--verb': exercise.parts[part]!.verb }"
+              :class="{ 'block--verb': isVerb(exercise.parts[part]!) }"
               :aria-label="`${exercise.parts[part]!.text} wieder entfernen`"
               :disabled="isComplete(index) && isCorrect(index)"
               @click="remove(index, position)"
@@ -77,6 +88,7 @@ function restart(index: number) {
             </button>
           </li>
           <li v-if="!isComplete(index)" class="answer-gap" aria-hidden="true" />
+          <li class="answer-end" aria-hidden="true">{{ sentenceKinds[exercise.kind].end }}</li>
         </ol>
 
         <ul v-if="!isComplete(index)" class="pool" :aria-label="`Bausteine für Satz ${index + 1}`">
@@ -85,7 +97,7 @@ function restart(index: number) {
               <button
                 type="button"
                 class="block"
-                :class="{ 'block--verb': part.verb }"
+                :class="{ 'block--verb': isVerb(part) }"
                 :aria-label="`${part.text} (${part.role}) einfügen`"
                 @click="place(index, partIndex)"
               >
@@ -102,7 +114,7 @@ function restart(index: number) {
               <strong>Richtig: {{ sentence(index) }}</strong> {{ exercise.tip }}
             </p>
             <p v-else>
-              <strong>Noch nicht ganz.</strong> {{ exercise.tip }}
+              <strong>Noch nicht ganz.</strong> {{ hint(index) }}
               <button type="button" class="restart" @click="restart(index)">Neu sortieren</button>
             </p>
           </template>
@@ -149,6 +161,10 @@ function restart(index: number) {
   font-weight: var(--weight-strong);
 }
 
+.kind {
+  color: var(--color-text);
+}
+
 .answer,
 .pool {
   display: flex;
@@ -169,6 +185,15 @@ function restart(index: number) {
 
 .answer-gap {
   flex: 1;
+}
+
+/* The sentence's full stop or question mark, waiting at the end of the line */
+.answer-end {
+  align-self: end;
+  color: var(--color-text-muted);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-heading);
 }
 
 .block {
