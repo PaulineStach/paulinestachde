@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { email, consultationLink } = useContact()
+const { consultationLink } = useContact()
 
 useSeoMeta({
   title: 'Pauline Stach – Deutschtraining für Unternehmen',
@@ -52,13 +52,6 @@ const steps = [
     title: 'Rückmeldung',
     text: 'Regelmäßige Lernstandsberichte zeigen Ihnen die Fortschritte. Auf Wunsch mit Abschlusstest oder Prüfung.',
   },
-]
-
-const contactHints = [
-  'wie viele Mitarbeitende Deutsch lernen sollen',
-  'welches Niveau sie ungefähr haben',
-  'in welchen Situationen sie Deutsch im Job brauchen',
-  'ab wann und wo der Unterricht stattfinden soll',
 ]
 </script>
 
@@ -293,20 +286,9 @@ const contactHints = [
     </section>
 
     <!-- Contact -->
-    <section id="kontakt" class="section contact" aria-labelledby="kontakt-title">
-      <div class="wrap contact-inner">
-        <h2 id="kontakt-title">Erzählen Sie mir von Ihrem Team.</h2>
-        <div class="contact-body">
-          <p class="text-lg">Für ein gutes Angebot hilft mir zu wissen,</p>
-          <ul class="hints">
-            <li v-for="hint in contactHints" :key="hint">{{ hint }}.</li>
-          </ul>
-          <p>Ich melde mich mit einem Terminvorschlag für das Erstgespräch.</p>
-          <div class="actions">
-            <BaseButton :to="consultationLink">E-Mail schreiben</BaseButton>
-            <a :href="`mailto:${email}`" class="contact-mail">{{ email }}</a>
-          </div>
-        </div>
+    <section id="kontakt" class="section" aria-labelledby="kontakt-title">
+      <div class="wrap">
+        <ContactPanel />
       </div>
     </section>
   </main>
@@ -665,53 +647,6 @@ const contactHints = [
 
 @media (min-width: 52rem) {
   .material {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* Contact */
-.contact {
-  border-block-start: 1px solid var(--color-border);
-}
-
-.contact-inner {
-  display: grid;
-  gap: var(--space-lg) var(--space-2xl);
-}
-
-.contact-inner h2 {
-  font-size: var(--text-h1);
-  max-inline-size: var(--layout-measure);
-}
-
-.contact-body {
-  display: grid;
-  gap: var(--space-sm);
-  max-inline-size: var(--layout-measure);
-}
-
-.hints {
-  display: grid;
-  gap: var(--space-3xs);
-  margin: 0;
-  padding-inline-start: var(--space-md);
-  list-style: square;
-}
-
-.hints li::marker {
-  color: var(--color-accent);
-}
-
-.contact-body .actions {
-  margin-block-start: var(--space-sm);
-}
-
-.contact-mail {
-  font-weight: var(--weight-strong);
-}
-
-@media (min-width: 60rem) {
-  .contact-inner {
     grid-template-columns: 1fr 1fr;
   }
 }

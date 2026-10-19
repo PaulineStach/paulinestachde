@@ -40,6 +40,7 @@
   --color-text-on-panel: var(--ref-neutral-0);
   --color-field-on-panel: var(--ref-white-a20);
   --color-field-border-on-panel: var(--ref-white-a60);
+  --color-button-on-panel-hover: var(--ref-leaf-100);
 
   /* Chalkboard – a physical board, so it keeps its colours in both themes */
   --color-board: var(--ref-board-700);
