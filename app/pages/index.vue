@@ -82,18 +82,18 @@ const steps = [
           <div
             class="lesson"
             role="img"
-            aria-label="Tafelbild zum Thema Feedback in der Retro, Grammatik Nebensätze: die Rückmeldung, der Vorschlag, das Hindernis, drei Satzanfänge für Feedback und der Satz „Gut lief, dass wir den Sprint geschafft haben.“"
+            aria-label="Tafelbild zum Thema Feedback für eine Produktpräsentation, Grammatik Nebensätze: die Präsentation, der Hinweis, das Feedback, drei Satzanfänge für Feedback und der Satz „Gut lief, dass du die Zahlen so klar erklärt hast.“"
             translate="no"
           >
             <div class="lesson-head">
-              <p class="lesson-topic">Thema: Feedback in der Retro</p>
+              <p class="lesson-topic">Thema: Feedback für eine Produktpräsentation</p>
               <p class="lesson-grammar">Grammatik: Nebensätze – das Verb steht am Ende</p>
             </div>
             <div class="lesson-columns">
               <ul class="lesson-list lesson-words">
-                <li><span class="chalk-die">die</span> Rückmeldung</li>
-                <li><span class="chalk-der">der</span> Vorschlag</li>
-                <li><span class="chalk-das">das</span> Hindernis</li>
+                <li><span class="chalk-die">die</span> Präsentation</li>
+                <li><span class="chalk-der">der</span> Hinweis</li>
+                <li><span class="chalk-das">das</span> Feedback</li>
               </ul>
               <ul class="lesson-list lesson-phrases">
                 <li>Gut lief, dass&nbsp;…</li>
@@ -102,8 +102,8 @@ const steps = [
               </ul>
             </div>
             <p class="lesson-sentence">
-              Gut lief, <span class="chalk-verb">dass</span> wir den Sprint geschafft
-              <span class="chalk-verb">haben</span>.
+              Gut lief, <span class="chalk-verb">dass</span> du die Zahlen so klar erklärt
+              <span class="chalk-verb">hast</span>.
             </p>
           </div>
         </ChalkBoard>
