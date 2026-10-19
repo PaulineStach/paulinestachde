@@ -58,19 +58,43 @@ const contactHints = [
     <!-- Hero -->
     <section class="hero">
       <div class="wrap hero-inner">
-        <HeroSentence>
+        <div class="hero-text">
+          <p class="hero-intro">
+            Berufsbezogene Deutschkurse für Unternehmen und ihre internationalen Mitarbeitenden
+          </p>
           <div class="hero-pitch">
+            <h1 class="hero-title">
+              <span class="hero-accent">Deutsch</span>, das im Betrieb ankommt
+            </h1>
             <p class="lead">
-              Deutschkurse für Unternehmen und ihre internationalen Mitarbeitenden. Berufsbezogen,
-              auf Ihre Branche zugeschnitten – als Einzeltraining oder in der Gruppe, vor Ort oder
+              Auf Ihre Branche zugeschnitten – als Einzeltraining oder in der Gruppe, vor Ort oder
               online.
             </p>
             <div class="actions">
               <BaseButton :to="consultationLink">Erstgespräch anfragen</BaseButton>
-              <BaseButton to="/#angebot" variant="quiet">Angebot ansehen</BaseButton>
             </div>
           </div>
-        </HeroSentence>
+        </div>
+
+        <ChalkBoard class="hero-board">
+          <div
+            class="chalk"
+            role="img"
+            aria-label="Tafel mit den Wörtern der Dienstplan, die Schicht und das Werkzeug"
+            translate="no"
+          >
+            <p class="chalk-title">Wortschatz im Betrieb</p>
+            <ul class="chalk-words">
+              <li><span class="chalk-der">der</span> Dienstplan</li>
+              <li><span class="chalk-die">die</span> Schicht</li>
+              <li><span class="chalk-das">das</span> Werkzeug</li>
+            </ul>
+            <p class="chalk-sentence">
+              Wir <span class="chalk-verb">fangen</span> morgen früher
+              <span class="chalk-verb">an</span>.
+            </p>
+          </div>
+        </ChalkBoard>
 
         <ul class="credentials" aria-label="Qualifikationen">
           <li v-for="item in credentials" :key="item">{{ item }}</li>
@@ -268,17 +292,106 @@ const contactHints = [
   gap: var(--space-sm);
 }
 
-/* Hero */
+/* Hero: text on the left, the chalkboard on the right */
 .hero-inner {
   display: grid;
+  gap: var(--space-lg) var(--space-xl);
+  padding-block: var(--space-lg) var(--space-xl);
+}
+
+.hero-text {
+  display: grid;
+  align-content: space-between;
   gap: var(--space-xl);
-  padding-block: var(--space-2xl) var(--space-xl);
+}
+
+.hero-intro {
+  max-inline-size: 30ch;
+  font-size: var(--text-sm);
 }
 
 .hero-pitch {
   display: grid;
+  justify-items: start;
   gap: var(--space-md);
   max-inline-size: var(--layout-measure);
+}
+
+.hero-title {
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.hero-accent {
+  color: var(--color-accent);
+}
+
+.hero-board {
+  min-block-size: 24rem;
+}
+
+/* Chalk writing on the board */
+.chalk {
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-lg);
+  font-family: var(--font-hand);
+  font-size: var(--text-chalk);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-heading);
+}
+
+.chalk-title {
+  color: var(--color-chalk-muted);
+  font-size: var(--text-xl);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+.chalk-words {
+  display: grid;
+  gap: var(--space-2xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chalk-der {
+  color: var(--color-chalk-der);
+}
+
+.chalk-die {
+  color: var(--color-chalk-die);
+}
+
+.chalk-das {
+  color: var(--color-chalk-das);
+}
+
+.chalk-sentence {
+  font-size: var(--text-xl);
+}
+
+.chalk-verb {
+  text-decoration: underline wavy var(--color-chalk-die);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+@media (min-width: 52rem) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .hero-board {
+    min-block-size: 34rem;
+  }
+
+  .credentials {
+    grid-column: 1 / -1;
+  }
 }
 
 .lead {
