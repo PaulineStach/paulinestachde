@@ -111,9 +111,10 @@ const parts = computed(() => props.syllables.split('·'))
   color: var(--entry-color);
 }
 
+/* A card, not a pill: the quote runs over several lines and needs room on both sides */
 .example {
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-control);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-card);
   background: var(--entry-subtle);
   font-family: var(--font-heading);
   font-size: var(--text-lg);
