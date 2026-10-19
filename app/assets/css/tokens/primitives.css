@@ -5,20 +5,43 @@
  * they are only referenced from semantic.css.
  */
 :root {
-  /* Colors: neutral – "exercise book paper" to "ink", slightly blue-tinted (OKLCH) */
+  /* Colors: neutral – white to near-black, with a faint green tint (OKLCH) */
   --ref-neutral-0: oklch(100% 0 0);
-  --ref-neutral-50: oklch(98.4% 0.004 240);
-  --ref-neutral-100: oklch(96% 0.007 240);
-  --ref-neutral-200: oklch(91.5% 0.01 240);
-  --ref-neutral-300: oklch(86% 0.014 240);
-  --ref-neutral-400: oklch(70% 0.02 245);
-  --ref-neutral-500: oklch(55% 0.025 250);
-  --ref-neutral-600: oklch(45% 0.03 252);
-  --ref-neutral-700: oklch(37% 0.032 254);
-  --ref-neutral-800: oklch(28% 0.03 256);
-  --ref-neutral-900: oklch(22% 0.03 258);
-  --ref-neutral-950: oklch(17% 0.026 258);
+  --ref-neutral-50: oklch(98.5% 0.004 150);
+  --ref-neutral-100: oklch(96.5% 0.006 150);
+  --ref-neutral-200: oklch(92% 0.008 150);
+  --ref-neutral-300: oklch(86% 0.01 150);
+  --ref-neutral-400: oklch(70% 0.012 150);
+  --ref-neutral-500: oklch(57% 0.014 150);
+  --ref-neutral-600: oklch(47% 0.015 150);
+  --ref-neutral-700: oklch(37% 0.015 150);
+  --ref-neutral-800: oklch(27% 0.014 150);
+  --ref-neutral-900: oklch(20% 0.012 150);
+  --ref-neutral-950: oklch(15% 0.012 150);
   --ref-neutral-1000: oklch(0% 0 0);
+
+  /* Colors: leaf – the brand green (accent, section headings, form panel, cards) */
+  --ref-leaf-50: oklch(97% 0.018 150);
+  --ref-leaf-100: oklch(93.5% 0.035 150);
+  --ref-leaf-300: oklch(75% 0.14 150);
+  --ref-leaf-400: oklch(66% 0.15 149);
+  --ref-leaf-600: oklch(48% 0.13 148);
+  --ref-leaf-700: oklch(38% 0.1 150);
+  --ref-leaf-800: oklch(30% 0.07 151);
+  --ref-leaf-900: oklch(23% 0.04 152);
+
+  /* Colors: chalkboard – board green and chalk, incl. pastel chalks for der, die, das */
+  --ref-board-700: oklch(31% 0.045 160);
+  --ref-board-900: oklch(23% 0.035 160);
+  --ref-chalk: oklch(96% 0.01 120);
+  --ref-chalk-muted: oklch(88% 0.03 150);
+  --ref-chalk-blue: oklch(82% 0.08 240);
+  --ref-chalk-red: oklch(80% 0.1 20);
+  --ref-chalk-green: oklch(86% 0.11 145);
+
+  /* Colors: translucent white for fields on the green panel */
+  --ref-white-a20: oklch(100% 0 0 / 0.2);
+  --ref-white-a60: oklch(100% 0 0 / 0.6);
 
   /* Colors: blue – the accent, and the colour for "der" in German teaching material */
   --ref-blue-100: oklch(94% 0.03 255);
@@ -63,9 +86,9 @@
 
   /* Typography */
   --ref-font-sans:
-    'Atkinson Hyperlegible Next', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Instrument Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
-  --ref-font-slab: 'Zilla Slab', ui-serif, Rockwell, Georgia, Cambria, serif;
+  --ref-font-hand: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
   --ref-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --ref-font-size-xs: 0.8125rem;
@@ -76,19 +99,21 @@
   --ref-font-size-2xl: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
   --ref-font-size-3xl: clamp(2rem, 1.5rem + 2vw, 3rem);
   --ref-font-size-4xl: clamp(2.5rem, 1.6rem + 3.4vw, 4rem);
-  --ref-font-size-5xl: clamp(2.375rem, 0.5rem + 3.6vw, 4.25rem);
+  --ref-font-size-5xl: clamp(2.75rem, 1rem + 5vw, 5.5rem);
+  --ref-font-size-chalk: clamp(1.75rem, 1.2rem + 2vw, 3rem);
 
   --ref-font-weight-regular: 400;
   --ref-font-weight-medium: 500;
   --ref-font-weight-semibold: 600;
   --ref-font-weight-bold: 700;
 
-  --ref-line-height-display: 1.02;
+  --ref-line-height-display: 0.98;
   --ref-line-height-tight: 1.12;
   --ref-line-height-snug: 1.35;
   --ref-line-height-normal: 1.6;
 
-  --ref-tracking-tight: -0.015em;
+  --ref-tracking-tight: -0.02em;
+  --ref-tracking-tighter: -0.035em;
   --ref-tracking-wide: 0.02em;
 
   /* Strokes */
@@ -101,6 +126,7 @@
   --ref-radius-sm: 0.25rem;
   --ref-radius-md: 0.5rem;
   --ref-radius-lg: 1rem;
+  --ref-radius-xl: 1.25rem;
   --ref-radius-full: 9999px;
 
   /* Shadows */

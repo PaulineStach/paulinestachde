@@ -9,7 +9,9 @@ export default defineNuxtConfig({
       title: 'Pauline Stach',
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#121b28' },
+        // Matches --color-bg in each colour scheme
+        { name: 'theme-color', content: '#ffffff', media: '(prefers-color-scheme: light)' },
+        { name: 'theme-color', content: '#080d09', media: '(prefers-color-scheme: dark)' },
       ],
       link: [
         { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
@@ -19,14 +21,14 @@ export default defineNuxtConfig({
         // Preload the two faces used above the fold
         {
           rel: 'preload',
-          href: '/fonts/zilla-slab-latin-700-normal.woff2',
+          href: '/fonts/instrument-sans-latin-standard-normal.woff2',
           as: 'font',
           type: 'font/woff2',
           crossorigin: '',
         },
         {
           rel: 'preload',
-          href: '/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2',
+          href: '/fonts/caveat-latin-wght-normal.woff2',
           as: 'font',
           type: 'font/woff2',
           crossorigin: '',

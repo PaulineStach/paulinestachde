@@ -10,9 +10,9 @@
   color-scheme: light dark;
 
   /* Surfaces */
-  --color-bg: var(--ref-neutral-50);
-  --color-bg-subtle: var(--ref-neutral-100);
-  --color-surface: var(--ref-neutral-0);
+  --color-bg: var(--ref-neutral-0);
+  --color-bg-subtle: var(--ref-leaf-50);
+  --color-surface: var(--ref-leaf-50);
   --color-surface-raised: var(--ref-neutral-100);
   --color-surface-inverse: var(--ref-neutral-900);
 
@@ -27,11 +27,28 @@
   --color-border: var(--ref-neutral-200);
   --color-border-strong: var(--ref-neutral-400);
 
-  /* Accent / interaction */
-  --color-accent: var(--ref-blue-600);
-  --color-accent-hover: var(--ref-blue-700);
-  --color-accent-subtle: var(--ref-blue-100);
-  --color-focus-ring: var(--ref-blue-500);
+  /* Accent / interaction – brand green */
+  --color-accent: var(--ref-leaf-600);
+  --color-accent-hover: var(--ref-leaf-700);
+  --color-accent-subtle: var(--ref-leaf-100);
+  --color-focus-ring: var(--ref-leaf-600);
+  --color-heading-accent: var(--ref-leaf-700);
+
+  /* Cards and the green form panel */
+  --color-card: var(--ref-leaf-50);
+  --color-panel: var(--ref-leaf-600);
+  --color-text-on-panel: var(--ref-neutral-0);
+  --color-field-on-panel: var(--ref-white-a20);
+  --color-field-border-on-panel: var(--ref-white-a60);
+
+  /* Chalkboard – a physical board, so it keeps its colours in both themes */
+  --color-board: var(--ref-board-700);
+  --color-board-deep: var(--ref-board-900);
+  --color-chalk: var(--ref-chalk);
+  --color-chalk-muted: var(--ref-chalk-muted);
+  --color-chalk-der: var(--ref-chalk-blue);
+  --color-chalk-die: var(--ref-chalk-red);
+  --color-chalk-das: var(--ref-chalk-green);
 
   /*
    * Grammatical gender – the colour code used in German teaching material.
@@ -69,7 +86,8 @@
 
   /* Typography */
   --font-body: var(--ref-font-sans);
-  --font-heading: var(--ref-font-slab);
+  --font-heading: var(--ref-font-sans);
+  --font-hand: var(--ref-font-hand);
   --font-code: var(--ref-font-mono);
 
   --text-xs: var(--ref-font-size-xs);
@@ -81,11 +99,12 @@
   --text-h2: var(--ref-font-size-3xl);
   --text-h1: var(--ref-font-size-4xl);
   --text-display: var(--ref-font-size-5xl);
+  --text-chalk: var(--ref-font-size-chalk);
 
   --weight-body: var(--ref-font-weight-regular);
   --weight-medium: var(--ref-font-weight-medium);
   --weight-strong: var(--ref-font-weight-semibold);
-  --weight-heading: var(--ref-font-weight-semibold);
+  --weight-heading: var(--ref-font-weight-bold);
   --weight-display: var(--ref-font-weight-bold);
 
   --leading-display: var(--ref-line-height-display);
@@ -94,6 +113,7 @@
   --leading-body: var(--ref-line-height-normal);
 
   --tracking-heading: var(--ref-tracking-tight);
+  --tracking-display: var(--ref-tracking-tighter);
   --tracking-label: var(--ref-tracking-wide);
 
   /* Strokes */
@@ -102,8 +122,9 @@
   --stroke-marker: var(--ref-stroke-4);
 
   /* Shape */
-  --radius-control: var(--ref-radius-sm);
-  --radius-card: var(--ref-radius-md);
+  --radius-control: var(--ref-radius-full);
+  --radius-field: var(--ref-radius-md);
+  --radius-card: var(--ref-radius-xl);
   --radius-pill: var(--ref-radius-full);
 
   --shadow-card: var(--ref-shadow-sm);
@@ -131,8 +152,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     --color-bg: var(--ref-neutral-950);
-    --color-bg-subtle: var(--ref-neutral-900);
-    --color-surface: var(--ref-neutral-900);
+    --color-bg-subtle: var(--ref-leaf-900);
+    --color-surface: var(--ref-leaf-900);
+    --color-card: var(--ref-leaf-900);
+    --color-panel: var(--ref-leaf-800);
+    --color-heading-accent: var(--ref-leaf-300);
+    --color-focus-ring: var(--ref-leaf-300);
     --color-surface-raised: var(--ref-neutral-800);
     --color-surface-inverse: var(--ref-neutral-100);
     --color-text: var(--ref-neutral-50);
@@ -141,9 +166,9 @@
     --color-text-inverse-muted: var(--ref-neutral-600);
     --color-border: var(--ref-neutral-800);
     --color-border-strong: var(--ref-neutral-600);
-    --color-accent: var(--ref-blue-300);
-    --color-accent-hover: var(--ref-blue-100);
-    --color-accent-subtle: var(--ref-blue-800);
+    --color-accent: var(--ref-leaf-300);
+    --color-accent-hover: var(--ref-leaf-100);
+    --color-accent-subtle: var(--ref-leaf-800);
     --color-text-on-accent: var(--ref-neutral-950);
     --color-der: var(--ref-blue-300);
     --color-der-subtle: var(--ref-blue-800);
@@ -161,8 +186,12 @@
 :root[data-theme='dark'] {
   color-scheme: dark;
   --color-bg: var(--ref-neutral-950);
-  --color-bg-subtle: var(--ref-neutral-900);
-  --color-surface: var(--ref-neutral-900);
+  --color-bg-subtle: var(--ref-leaf-900);
+  --color-surface: var(--ref-leaf-900);
+  --color-card: var(--ref-leaf-900);
+  --color-panel: var(--ref-leaf-800);
+  --color-heading-accent: var(--ref-leaf-300);
+  --color-focus-ring: var(--ref-leaf-300);
   --color-surface-raised: var(--ref-neutral-800);
   --color-surface-inverse: var(--ref-neutral-100);
   --color-text: var(--ref-neutral-50);
@@ -171,9 +200,9 @@
   --color-text-inverse-muted: var(--ref-neutral-600);
   --color-border: var(--ref-neutral-800);
   --color-border-strong: var(--ref-neutral-600);
-  --color-accent: var(--ref-blue-300);
-  --color-accent-hover: var(--ref-blue-100);
-  --color-accent-subtle: var(--ref-blue-800);
+  --color-accent: var(--ref-leaf-300);
+  --color-accent-hover: var(--ref-leaf-100);
+  --color-accent-subtle: var(--ref-leaf-800);
   --color-text-on-accent: var(--ref-neutral-950);
   --color-der: var(--ref-blue-300);
   --color-der-subtle: var(--ref-blue-800);
