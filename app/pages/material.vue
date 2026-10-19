@@ -50,6 +50,7 @@ const accessLink = mailto('Zugang zum Lernmaterial')
       </header>
 
       <ArticleQuiz />
+      <SentenceBuilder />
     </section>
 
     <section class="planned" aria-labelledby="planned-title">
