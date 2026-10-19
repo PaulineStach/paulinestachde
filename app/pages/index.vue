@@ -86,25 +86,7 @@ const steps = [
           </div>
         </div>
 
-        <ChalkBoard class="hero-board">
-          <div
-            class="chalk"
-            role="img"
-            aria-label="Tafel mit den Wörtern der Dienstplan, die Schicht und das Werkzeug"
-            translate="no"
-          >
-            <p class="chalk-title">Wortschatz im Betrieb</p>
-            <ul class="chalk-words">
-              <li><span class="chalk-der">der</span> Dienstplan</li>
-              <li><span class="chalk-die">die</span> Schicht</li>
-              <li><span class="chalk-das">das</span> Werkzeug</li>
-            </ul>
-            <p class="chalk-sentence">
-              Wir <span class="chalk-verb">fangen</span> morgen früher
-              <span class="chalk-verb">an</span>.
-            </p>
-          </div>
-        </ChalkBoard>
+        <GlobePanel class="hero-board" />
       </div>
     </section>
 
@@ -378,55 +360,6 @@ const steps = [
 
 .hero-board {
   min-block-size: 24rem;
-}
-
-/* Chalk writing on the board */
-.chalk {
-  display: grid;
-  align-content: space-between;
-  gap: var(--space-lg);
-  font-family: var(--font-hand);
-  font-size: var(--text-chalk);
-  font-weight: var(--weight-medium);
-  line-height: var(--leading-heading);
-}
-
-.chalk-title {
-  color: var(--color-chalk-muted);
-  font-size: var(--text-xl);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.25em;
-}
-
-.chalk-words {
-  display: grid;
-  gap: var(--space-2xs);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.chalk-der {
-  color: var(--color-chalk-der);
-}
-
-.chalk-die {
-  color: var(--color-chalk-die);
-}
-
-.chalk-das {
-  color: var(--color-chalk-das);
-}
-
-.chalk-sentence {
-  font-size: var(--text-xl);
-}
-
-.chalk-verb {
-  text-decoration: underline wavy var(--color-chalk-die);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.3em;
 }
 
 @media (min-width: 52rem) {
