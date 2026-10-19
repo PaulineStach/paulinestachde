@@ -82,25 +82,25 @@ const steps = [
           <div
             class="lesson"
             role="img"
-            aria-label="Tafelbild zum Thema Schichtübergabe: der Dienstplan, die Übergabe, das Protokoll, drei Redemittel und der Satz „Ich kann morgen früher anfangen.“"
+            aria-label="Tafelbild zum Thema Daily Scrum am Morgen: das Daily, der Tagesplan, die Aufgabe, drei Redemittel für Smalltalk und Tagesplanung und der Satz „Heute rufe ich den Kunden an.“"
             translate="no"
           >
-            <p class="lesson-topic">Thema: Schichtübergabe</p>
+            <p class="lesson-topic">Thema: Daily Scrum am Morgen</p>
             <div class="lesson-columns">
               <ul class="lesson-list lesson-words">
-                <li><span class="chalk-der">der</span> Dienstplan</li>
-                <li><span class="chalk-die">die</span> Übergabe</li>
-                <li><span class="chalk-das">das</span> Protokoll</li>
+                <li><span class="chalk-das">das</span> Daily</li>
+                <li><span class="chalk-der">der</span> Tagesplan</li>
+                <li><span class="chalk-die">die</span> Aufgabe</li>
               </ul>
               <ul class="lesson-list lesson-phrases">
-                <li>Was ist heute passiert?</li>
-                <li>Die Maschine läuft wieder.</li>
-                <li>Bitte noch Material bestellen.</li>
+                <li>Wie war dein Wochenende?</li>
+                <li>Gestern habe ich … erledigt.</li>
+                <li>Heute kümmere ich mich um …</li>
               </ul>
             </div>
             <p class="lesson-sentence">
-              Ich <span class="chalk-verb">kann</span> morgen früher
-              <span class="chalk-verb">anfangen</span>.
+              Heute <span class="chalk-verb">rufe</span> ich den Kunden
+              <span class="chalk-verb">an</span>.
             </p>
           </div>
         </ChalkBoard>
