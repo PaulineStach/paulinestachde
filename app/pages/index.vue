@@ -236,10 +236,7 @@ const steps = [
     <!-- About -->
     <section id="ueber-mich" class="section section--subtle" aria-labelledby="ueber-mich-title">
       <div class="wrap about">
-        <!-- TODO: replace with a portrait photo, e.g. <img src="/pauline-stach.jpg" alt="…"> -->
-        <div class="portrait" role="img" aria-label="Platzhalter für ein Porträtfoto">
-          <span aria-hidden="true">PS</span>
-        </div>
+        <GlobePanel class="about-globe" />
 
         <div class="about-text">
           <h2 id="ueber-mich-title">Über mich</h2>
@@ -556,18 +553,8 @@ const steps = [
   align-items: start;
 }
 
-.portrait {
-  display: grid;
-  place-items: center;
-  max-inline-size: var(--size-portrait);
-  aspect-ratio: 4 / 5;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
-  background: var(--color-surface);
-  color: var(--color-border-strong);
-  font-family: var(--font-heading);
-  font-size: var(--text-display);
-  font-weight: var(--weight-display);
+.about-globe {
+  align-self: center;
 }
 
 .about-text {
