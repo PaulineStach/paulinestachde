@@ -103,6 +103,7 @@ app/
   layouts/default.vue     # skip link, header, footer – used by app.vue and error.vue
   pages/                  # file-based routing
   components/             # auto-imported components
+  data/                   # large static data (e.g. map geometry), imported explicitly
   assets/css/
     main.css              # entry point, defines cascade layers
     tokens/
