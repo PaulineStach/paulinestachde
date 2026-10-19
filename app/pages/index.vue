@@ -297,12 +297,7 @@ const steps = [
               Ludwig Wittgenstein, <cite>Tractatus logico-philosophicus</cite> 5.6
             </figcaption>
           </figure>
-          <figure class="stations-map">
-            <WorldMap />
-            <figcaption class="stations-caption">
-              Gelehrt und gelernt in fünf Ländern auf drei Kontinenten
-            </figcaption>
-          </figure>
+          <WorldMap />
         </div>
       </div>
     </section>
@@ -687,17 +682,6 @@ const steps = [
 
 .stations-accent {
   color: var(--color-heading-accent);
-}
-
-.stations-map {
-  display: grid;
-  gap: var(--space-xs);
-  margin: 0;
-}
-
-.stations-caption {
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
 }
 
 .about-text {
