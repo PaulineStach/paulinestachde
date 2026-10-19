@@ -3,8 +3,29 @@
  * Contact as a split panel: a chalkboard with the invitation on the left, a green form on
  * the right. The site has no backend, so sending opens the visitor's mail program with the
  * message filled in – nothing is stored or transmitted by the website itself.
+ *
+ * The board also offers booking a slot via Calendly. Calendly is only loaded after the
+ * visitor clicks (two-click solution): until then no data goes to Calendly (USA).
  */
-const { email, mailto } = useContact()
+const { email, calendly, mailto } = useContact()
+
+const showCalendar = ref(false)
+const bookingFrame = useTemplateRef<HTMLIFrameElement>('bookingFrame')
+
+/** Calendly's inline embed, without its own cookie banner (consent is the click) */
+const calendarSrc = computed(() => {
+  const url = new URL(calendly)
+  url.searchParams.set('embed_type', 'Inline')
+  url.searchParams.set('hide_gdpr_banner', '1')
+  if (import.meta.client) url.searchParams.set('embed_domain', window.location.host)
+  return url.toString()
+})
+
+async function loadCalendar() {
+  showCalendar.value = true
+  await nextTick()
+  bookingFrame.value?.focus()
+}
 
 const name = ref('')
 const company = ref('')
@@ -29,12 +50,36 @@ function openDraft() {
 
 <template>
   <div class="contact-panel">
-    <ChalkBoard class="invite">
+    <ChalkBoard v-if="!showCalendar" class="invite">
       <div class="invite-text">
         <h2 id="kontakt-title" class="invite-title">Erzählen Sie mir von Ihrem Team</h2>
-        <p>Ich melde mich mit einem Terminvorschlag für das Erstgespräch.</p>
+        <p>
+          Wählen Sie direkt einen freien Termin für ein Erstgespräch – oder schreiben Sie mir eine
+          Nachricht.
+        </p>
+        <button type="button" class="book" @click="loadCalendar">
+          Termin im Kalender auswählen
+        </button>
+        <p class="invite-note">
+          Beim Klick wird der Buchungskalender von Calendly (USA) geladen. Mehr dazu in der
+          <NuxtLink to="/datenschutz">Datenschutzerklärung</NuxtLink>. Sie können den Kalender auch
+          <a :href="calendly" target="_blank" rel="noopener">in einem neuen Tab öffnen</a>.
+        </p>
       </div>
     </ChalkBoard>
+
+    <div v-else class="booking">
+      <h2 id="kontakt-title" class="booking-title">Termin für ein Erstgespräch wählen</h2>
+      <iframe
+        ref="bookingFrame"
+        class="booking-frame"
+        :src="calendarSrc"
+        title="Terminbuchung mit Calendly"
+      />
+      <a :href="calendly" target="_blank" rel="noopener" class="booking-link">
+        Kalender in einem neuen Tab öffnen
+      </a>
+    </div>
 
     <form class="form" @submit.prevent="openDraft">
       <div class="field">
@@ -100,6 +145,61 @@ function openDraft() {
   color: var(--color-chalk);
   font-size: var(--text-h1);
   letter-spacing: var(--tracking-display);
+}
+
+/* A chalk-white button on the board */
+.book {
+  min-block-size: var(--size-control);
+  padding-inline: var(--space-md);
+  border: 0;
+  border-radius: var(--radius-control);
+  background: var(--color-chalk);
+  color: var(--color-board-deep);
+  font-weight: var(--weight-strong);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.book:hover {
+  background: var(--color-chalk-muted);
+}
+
+.invite-note {
+  max-inline-size: 40ch;
+  font-size: var(--text-xs);
+}
+
+.invite-note a {
+  color: var(--color-chalk);
+}
+
+/* The page's green focus ring would vanish on the dark board */
+.invite-text :focus-visible {
+  outline-color: var(--color-chalk);
+}
+
+/* The loaded Calendly calendar */
+.booking {
+  display: grid;
+  gap: var(--space-xs);
+  align-content: start;
+}
+
+.booking-title {
+  font-size: var(--text-xl);
+}
+
+.booking-frame {
+  inline-size: 100%;
+  block-size: var(--size-booking);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+.booking-link {
+  justify-self: start;
+  font-size: var(--text-sm);
 }
 
 .form {

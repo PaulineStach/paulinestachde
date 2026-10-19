@@ -26,5 +26,11 @@ export function useContact() {
     ].join('\n'),
   )
 
-  return { email: owner.email, name: owner.name, mailto, consultationLink }
+  return {
+    email: owner.email,
+    name: owner.name,
+    calendly: owner.calendly,
+    mailto,
+    consultationLink,
+  }
 }

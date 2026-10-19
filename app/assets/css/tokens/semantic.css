@@ -141,6 +141,7 @@
   --size-portrait: var(--ref-size-portrait);
   --size-card: var(--ref-size-card);
   --size-board: var(--ref-size-board);
+  --size-booking: var(--ref-size-booking);
   --size-card-icon: var(--ref-size-card-icon);
 
   /* Motion */
