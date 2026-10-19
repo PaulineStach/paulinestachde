@@ -199,7 +199,7 @@ const steps = [
             syllables="Grup·pen·kurs"
             :details="[
               'kleine Gruppen mit ähnlichem Niveau, von A1 bis C1',
-              'fester Wochenrhythmus, gern vor oder nach der Schicht',
+              'fester Wochenrhythmus, gern vor oder nach der Schicht oder als Lunchbreak',
               'Lernstandsberichte für Sie als Arbeitgeber',
             ]"
             example="„Der Gruppenkurs findet dienstags nach der Frühschicht statt.“"
