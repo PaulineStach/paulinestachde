@@ -308,8 +308,8 @@ const steps = [
         <div class="material-text">
           <h2 id="material-title">Lernmaterial</h2>
           <p class="text-lg">
-            Kostenlose Übungen für Deutsch im IT-Alltag: Vokabeln mit Artikel und Plural, Satzbau,
-            Verben, Präpositionen in Firmentexten und Redewendungen – frei nutzbar für Ihr Team.
+            Kostenlose Übungen für Deutsch im (Berufs-)Alltag: Grammatik, Satzbau,
+            Geschäftskommunikation und Redewendungen – frei nutzbar für Ihr Team.
           </p>
           <BaseButton to="/material" variant="quiet">Übungen ausprobieren</BaseButton>
         </div>
