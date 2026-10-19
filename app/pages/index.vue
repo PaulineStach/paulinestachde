@@ -238,7 +238,7 @@ const steps = [
     </section>
 
     <!-- About -->
-    <section id="ueber-mich" class="section section--subtle" aria-labelledby="ueber-mich-title">
+    <section id="ueber-mich" class="section" aria-labelledby="ueber-mich-title">
       <div class="wrap about">
         <GlobePanel class="about-globe" />
 
