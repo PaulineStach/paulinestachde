@@ -275,12 +275,25 @@ const steps = [
           </p>
         </div>
 
-        <figure class="stations">
-          <WorldMap />
-          <figcaption class="stations-caption">
-            Gelehrt und gelernt in fünf Ländern auf drei Kontinenten
-          </figcaption>
-        </figure>
+        <div class="stations">
+          <figure class="stations-quote">
+            <blockquote>
+              <p>
+                „Die Grenzen meiner <span class="stations-accent">Sprache</span> bedeuten die
+                Grenzen meiner <span class="stations-accent">Welt</span>.“
+              </p>
+            </blockquote>
+            <figcaption>
+              Ludwig Wittgenstein, <cite>Tractatus logico-philosophicus</cite> 5.6
+            </figcaption>
+          </figure>
+          <figure class="stations-map">
+            <WorldMap />
+            <figcaption class="stations-caption">
+              Gelehrt und gelernt in fünf Ländern auf drei Kontinenten
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -625,11 +638,39 @@ const steps = [
 }
 
 /* The world map runs across the full width below photo and text */
+/* Wittgenstein's line on language and world, next to the map of places taught and studied */
 .stations {
+  display: grid;
+  align-items: center;
+  gap: var(--space-lg) var(--space-2xl);
+  padding-block-start: var(--space-md);
+}
+
+.stations-quote {
   display: grid;
   gap: var(--space-xs);
   margin: 0;
-  padding-block-start: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.stations-quote blockquote {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+}
+
+.stations-accent {
+  color: var(--color-heading-accent);
+}
+
+.stations-map {
+  display: grid;
+  gap: var(--space-xs);
+  margin: 0;
 }
 
 .stations-caption {
@@ -651,6 +692,7 @@ const steps = [
 
   .stations {
     grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
   }
 }
 
