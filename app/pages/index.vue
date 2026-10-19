@@ -265,10 +265,17 @@ const steps = [
         <div class="about-text">
           <h2 id="ueber-mich-title">Über mich</h2>
           <p class="text-lg">
-            Ich bin Pauline Stach, Deutschlehrerin mit einem Master of Education. Drei Jahre lang
-            habe ich am Goethe-Institut in Irland unterrichtet. Heute leite ich als vom BAMF
-            zugelassene Lehrkraft Integrationskurse und habe als Prüferin Sprachprüfungen
-            abgenommen.
+            Ich bin Pauline Stach, Deutschlehrerin mit einem Master of Education. Unterrichtet habe
+            ich unter anderem am Goethe-Institut in Irland und an Schulen in London und Windhoek,
+            Namibia.
+          </p>
+          <p>
+            Außerdem habe ich selbst in internationalen Teams im Bereich FinTech und SaaS
+            gearbeitet. Dort habe ich erlebt, wie moderne Tech-Unternehmen funktionieren: agil,
+            leistungsorientiert und mit Kolleginnen und Kollegen aus aller Welt. Heute leite ich als
+            vom BAMF zugelassene Lehrkraft Integrationskurse – und bringe beide Welten zusammen: Ich
+            helfe Unternehmen, das volle Potenzial ihrer internationalen Fachkräfte zu nutzen, und
+            den Mitarbeitenden, im deutschen Arbeitsalltag sicher anzukommen.
           </p>
           <p>
             Aus dieser Arbeit weiß ich: Erwachsene lernen am schnellsten, wenn die Sprache sofort
