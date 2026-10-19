@@ -24,7 +24,7 @@ function reset() {
 <template>
   <section class="register" aria-labelledby="register-title">
     <header class="intro">
-      <h3 id="register-title">Formell oder informell?</h3>
+      <h2 id="register-title">Formell oder informell?</h2>
       <p>
         Mit Kunden schreibt man anders als im Team-Chat. Ordnen Sie die Begrüßungen und
         Verabschiedungen zu.
