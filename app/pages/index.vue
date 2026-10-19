@@ -202,7 +202,7 @@ const steps = [
               'fester Wochenrhythmus, gern vor oder nach der Schicht oder als Lunchbreak',
               'Lernstandsberichte für Sie als Arbeitgeber',
             ]"
-            example="„Der Gruppenkurs findet dienstags nach der Frühschicht statt.“"
+            example="„Der Gruppenkurs findet dienstags mit dem ersten Morgenkaffee statt.“"
           >
             <p>
               Gemeinsamer Unterricht für mehrere Mitarbeitende, direkt in Ihrem Unternehmen oder
