@@ -240,7 +240,15 @@ const steps = [
     <!-- About -->
     <section id="ueber-mich" class="section" aria-labelledby="ueber-mich-title">
       <div class="wrap about">
-        <GlobePanel class="about-globe" />
+        <img
+          class="portrait"
+          src="/pauline-stach.jpg"
+          alt="Porträt von Pauline Stach"
+          width="1200"
+          height="800"
+          loading="lazy"
+          decoding="async"
+        />
 
         <div class="about-text">
           <h2 id="ueber-mich-title">Über mich</h2>
@@ -257,6 +265,13 @@ const steps = [
             zählt.
           </p>
         </div>
+
+        <figure class="stations">
+          <WorldMap />
+          <figcaption class="stations-caption">
+            Gelehrt und gelernt in fünf Ländern auf drei Kontinenten
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -569,8 +584,28 @@ const steps = [
   align-items: start;
 }
 
-.about-globe {
-  align-self: center;
+/* Portrait cropped to the face: the photo is landscape, the frame upright */
+.portrait {
+  inline-size: 100%;
+  max-inline-size: var(--size-portrait);
+  block-size: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 47% 30%;
+  border-radius: var(--radius-card);
+}
+
+/* The world map runs across the full width below photo and text */
+.stations {
+  display: grid;
+  gap: var(--space-xs);
+  margin: 0;
+  padding-block-start: var(--space-md);
+}
+
+.stations-caption {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
 }
 
 .about-text {
@@ -582,6 +617,11 @@ const steps = [
 @media (min-width: 52rem) {
   .about {
     grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    align-items: center;
+  }
+
+  .stations {
+    grid-column: 1 / -1;
   }
 }
 

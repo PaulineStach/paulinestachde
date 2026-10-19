@@ -23,7 +23,6 @@
   /* Colors: leaf – the brand green (accent, section headings, form panel, cards) */
   --ref-leaf-50: oklch(97% 0.018 150);
   --ref-leaf-100: oklch(93.5% 0.035 150);
-  --ref-leaf-200: oklch(86% 0.07 150);
   --ref-leaf-300: oklch(75% 0.14 150);
   --ref-leaf-400: oklch(66% 0.15 149);
   --ref-leaf-600: oklch(48% 0.13 148);
@@ -147,7 +146,7 @@
   --ref-size-wide: 76rem;
   --ref-size-control: 2.75rem;
   --ref-size-icon: 1.25rem;
+  --ref-size-portrait: 26rem;
   --ref-size-card: 15rem;
   --ref-size-card-icon: 3.5rem;
-  --ref-size-globe: 30rem;
 }

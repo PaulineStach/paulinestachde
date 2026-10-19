@@ -49,11 +49,9 @@
   --color-chalk-muted: var(--ref-chalk-muted);
   --color-chalk-accent: var(--ref-chalk-green);
 
-  /* Globe beside the hero quote – an illustration, so it keeps its colours in both themes */
-  --color-globe-ocean: var(--ref-leaf-50);
-  --color-globe-line: var(--ref-leaf-100);
-  --color-globe-land: var(--ref-leaf-200);
-  --color-globe-marked: var(--ref-leaf-400);
+  /* World map in the About section – an illustration, so it keeps its colours in both themes */
+  --color-map-land: var(--ref-leaf-100);
+  --color-map-marked: var(--ref-leaf-400);
 
   /*
    * Grammatical gender – the colour code used in German teaching material.
@@ -138,9 +136,9 @@
   /* Sizing */
   --size-control: var(--ref-size-control);
   --size-icon: var(--ref-size-icon);
+  --size-portrait: var(--ref-size-portrait);
   --size-card: var(--ref-size-card);
   --size-card-icon: var(--ref-size-card-icon);
-  --size-globe: var(--ref-size-globe);
 
   /* Motion */
   --transition-fast: var(--ref-duration-fast) var(--ref-easing-standard);
