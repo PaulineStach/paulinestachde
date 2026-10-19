@@ -15,46 +15,21 @@ export interface ArticleWord {
   tip: string
 }
 
-/** Workplace nouns for the "der, die oder das?" exercise on the material page */
+/** Nouns from IT teams for the "der, die oder das?" exercise on the material page */
 export const workplaceWords: ArticleWord[] = [
   {
-    word: 'Dienstplan',
-    article: 'der',
-    tip: 'Bei zusammengesetzten Wörtern entscheidet das letzte Wort: der Plan.',
-  },
-  {
-    word: 'Besprechung',
-    article: 'die',
-    tip: 'Wörter auf -ung haben immer den Artikel die.',
-  },
-  {
-    word: 'Werkzeug',
+    word: 'Ticket',
     article: 'das',
-    tip: 'Das letzte Wort entscheidet: das Zeug.',
+    tip: 'Englische Wörter bekommen im Deutschen einen Artikel – oft das: das Ticket, das Meeting, das Feature.',
   },
   {
-    word: 'Schicht',
-    article: 'die',
-    tip: 'Hier hilft keine Regel. Lernen Sie das Wort am besten gleich mit Artikel und Farbe.',
-  },
-  {
-    word: 'Feierabend',
+    word: 'Kunde',
     article: 'der',
-    tip: 'Tageszeiten sind maskulin: der Morgen, der Abend – also auch der Feierabend.',
+    tip: 'Viele männliche Personen auf -e sind maskulin: der Kunde, der Kollege, der Experte.',
   },
   {
-    word: 'Gehalt',
-    article: 'das',
-    tip: 'Viele Wörter mit Ge- am Anfang sind neutral: das Gehalt, das Gespräch, das Gerät.',
-  },
-  {
-    word: 'Pause',
+    word: 'Schnittstelle',
     article: 'die',
-    tip: 'Die meisten Wörter auf -e sind feminin: die Pause, die Woche, die Kasse.',
-  },
-  {
-    word: 'Arbeitsvertrag',
-    article: 'der',
-    tip: 'Das letzte Wort entscheidet: der Vertrag.',
+    tip: 'Bei zusammengesetzten Wörtern entscheidet das letzte Wort: die Stelle.',
   },
 ]
