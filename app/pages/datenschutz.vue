@@ -31,11 +31,31 @@ useSeoMeta({
       bearbeiten (Art. 6 Abs. 1 lit. b DSGVO).
     </p>
 
+    <h2>Terminbuchung über Calendly</h2>
+    <!-- TODO: check Calendly's address and Data Privacy Framework status at calendly.com/privacy before going live -->
+    <p>
+      Für die Buchung von Terminen nutze ich Calendly, einen Dienst der Calendly LLC, 115 E Main St,
+      Ste A1B, Buford, GA 30518, USA. Der Buchungskalender wird erst geladen, wenn Sie auf „Termin
+      im Kalender auswählen“ klicken oder ihn über den Link in einem neuen Tab öffnen. Vorher werden
+      keine Daten an Calendly übertragen.
+    </p>
+    <p>
+      Beim Laden erhält Calendly technische Daten wie Ihre IP-Adresse und kann Cookies setzen. Wenn
+      Sie einen Termin buchen, verarbeitet Calendly Ihre Angaben aus dem Buchungsformular, etwa
+      Name, E-Mail-Adresse und den gewählten Termin, und übermittelt sie an mich. Rechtsgrundlage
+      ist Ihre Einwilligung durch den Klick (Art. 6 Abs. 1 lit. a DSGVO) und die Anbahnung eines
+      Vertrags (Art. 6 Abs. 1 lit. b DSGVO). Dabei können Daten in die USA übermittelt werden;
+      Calendly ist nach eigenen Angaben unter dem EU-US Data Privacy Framework zertifiziert. Mehr
+      dazu unter
+      <a href="https://calendly.com/privacy" rel="noopener">calendly.com/privacy</a>.
+    </p>
+
     <h2>Schriftarten und Cookies</h2>
     <p>
       Die Schriftarten dieser Website werden lokal ausgeliefert; es werden keine Daten an Dritte
-      übertragen. Diese Website setzt keine Tracking-Cookies. Ihre Wahl zwischen hellem und dunklem
-      Design wird nur in Ihrem Browser gespeichert.
+      übertragen. Diese Website selbst setzt keine Tracking-Cookies – Cookies von Calendly entstehen
+      nur, wenn Sie den Buchungskalender laden. Ihre Wahl zwischen hellem und dunklem Design wird
+      nur in Ihrem Browser gespeichert.
     </p>
 
     <h2>Ihre Rechte</h2>
