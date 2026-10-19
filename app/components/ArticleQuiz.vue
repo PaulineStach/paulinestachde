@@ -21,7 +21,7 @@ function reset() {
 <template>
   <section class="quiz" aria-labelledby="quiz-title">
     <header class="intro">
-      <h2 id="quiz-title">Der, die oder das?</h2>
+      <h3 id="quiz-title">Der, die oder das?</h3>
       <p>
         Wählen Sie den richtigen Artikel. Die Farben helfen beim Merken:
         <span class="key key--der">blau für der</span>,
