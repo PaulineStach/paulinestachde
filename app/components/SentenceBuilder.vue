@@ -25,10 +25,14 @@ function isCorrect(index: number) {
 }
 
 /** The built sentence with a capital first letter and its full stop or question mark */
+/** The built sentence: capitalised (or after its main clause) with its end punctuation */
 function sentence(index: number) {
   const exercise = sentenceExercises[index]!
   const words = texts(exercise, picked.value[index]!).join(' ')
-  return words.charAt(0).toUpperCase() + words.slice(1) + sentenceKinds[exercise.kind].end
+  const body = exercise.prefix
+    ? `${exercise.prefix} ${words}`
+    : words.charAt(0).toUpperCase() + words.slice(1)
+  return body + sentenceKinds[exercise.kind].end
 }
 
 /** Both parts of the verb are highlighted: the finite verb and the part that closes the bracket */
@@ -36,8 +40,10 @@ function isVerb(part: SentencePart) {
   return Boolean(part.finite || part.last)
 }
 
+/** A block's text in the answer line: the first one is capitalised unless a main clause precedes */
 function display(index: number, position: number, text: string) {
-  return position === 0 ? text.charAt(0).toUpperCase() + text.slice(1) : text
+  const capitalise = position === 0 && !sentenceExercises[index]!.prefix
+  return capitalise ? text.charAt(0).toUpperCase() + text.slice(1) : text
 }
 
 function place(index: number, part: number) {
@@ -58,10 +64,10 @@ function restart(index: number) {
 <template>
   <section class="builder" aria-labelledby="builder-title">
     <header class="intro">
-      <h3 id="builder-title">Satzbau: Wer steht wo?</h3>
+      <h2 id="builder-title">Wer steht wo?</h2>
       <p>
-        Tippen Sie die Bausteine in der richtigen Reihenfolge an – als Aussage oder als Frage, wie
-        angegeben. Achten Sie auf das <strong class="verb-key">Verb</strong>.
+        Tippen Sie die Bausteine in der richtigen Reihenfolge an – als Aussage, Frage, Aufforderung
+        oder Nebensatz, wie angegeben. Achten Sie auf das <strong class="verb-key">Verb</strong>.
       </p>
     </header>
 
@@ -72,6 +78,7 @@ function restart(index: number) {
         </p>
 
         <ol class="answer" :aria-label="`Ihr Satz ${index + 1}`">
+          <li v-if="exercise.prefix" class="answer-prefix" translate="no">{{ exercise.prefix }}</li>
           <li v-for="(part, position) in picked[index]" :key="part">
             <button
               type="button"
@@ -185,6 +192,13 @@ function restart(index: number) {
 
 .answer-gap {
   flex: 1;
+}
+
+/* The fixed main clause in front of a subordinate clause */
+.answer-prefix {
+  align-self: center;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-strong);
 }
 
 /* The sentence's full stop or question mark, waiting at the end of the line */

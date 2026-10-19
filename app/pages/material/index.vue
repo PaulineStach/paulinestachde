@@ -24,7 +24,6 @@ const wishLink = mailto('Wunsch für Lernmaterial')
       <h2 id="excerpt-title" class="visually-hidden">Übungen</h2>
 
       <ArticleQuiz />
-      <SentenceBuilder />
       <RegisterSort />
     </section>
 
