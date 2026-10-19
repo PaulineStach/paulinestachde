@@ -449,9 +449,10 @@ const steps = [
     grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
   }
 
-  /* A landscape board, like the one in a classroom */
+  /* A landscape board, like the one in a classroom: wider than tall, but free to grow with
+     its writing (a fixed aspect ratio would clip it, as the board hides overflow) */
   .hero-board {
-    aspect-ratio: 3 / 2;
+    min-block-size: var(--size-board);
   }
 }
 
