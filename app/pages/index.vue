@@ -61,21 +61,13 @@ const steps = [
     <section class="hero">
       <div class="wrap hero-inner">
         <div class="hero-text">
-          <h1 class="hero-intro">
+          <p class="hero-intro">
             Berufsbezogene Deutschkurse für Unternehmen und ihre internationalen Mitarbeitenden
-          </h1>
+          </p>
           <div class="hero-pitch">
-            <figure class="hero-quote">
-              <blockquote>
-                <p class="hero-title">
-                  „Die Grenzen meiner <span class="hero-accent">Sprache</span> bedeuten die Grenzen
-                  meiner <span class="hero-accent">Welt</span>.“
-                </p>
-              </blockquote>
-              <figcaption class="hero-source">
-                Ludwig Wittgenstein, <cite>Tractatus logico-philosophicus</cite> 5.6
-              </figcaption>
-            </figure>
+            <h1 class="hero-title">
+              <span class="hero-accent">Deutsch</span>, das im Betrieb ankommt
+            </h1>
             <p class="lead">
               Auf Ihre Branche zugeschnitten – als Einzeltraining oder in der Gruppe, vor Ort oder
               online.
@@ -86,7 +78,19 @@ const steps = [
           </div>
         </div>
 
-        <GlobePanel class="hero-board" />
+        <ChalkBoard class="hero-board">
+          <figure class="chalk-quote">
+            <blockquote>
+              <p class="chalk-text">
+                „Die Grenzen meiner <span class="chalk-mark">Sprache</span> bedeuten die Grenzen
+                meiner <span class="chalk-mark">Welt</span>.“
+              </p>
+            </blockquote>
+            <figcaption class="chalk-source">
+              Ludwig Wittgenstein, <cite>Tractatus logico-philosophicus</cite> 5.6
+            </figcaption>
+          </figure>
+        </ChalkBoard>
       </div>
     </section>
 
@@ -315,12 +319,7 @@ const steps = [
   gap: var(--space-xl);
 }
 
-/* The course description is the page's h1, set small like a byline above the quote */
 .hero-intro {
-  font-family: var(--font-body);
-  font-weight: var(--weight-body);
-  letter-spacing: 0;
-  line-height: var(--leading-snug);
   max-inline-size: 30ch;
   font-size: var(--text-sm);
 }
@@ -332,19 +331,8 @@ const steps = [
   max-inline-size: var(--layout-measure);
 }
 
-.hero-quote {
-  display: grid;
-  gap: var(--space-xs);
-  margin: 0;
-}
-
-.hero-quote blockquote {
-  margin: 0;
-}
-
 .hero-title {
-  font-size: var(--text-quote);
-  font-weight: var(--weight-display);
+  font-size: var(--text-display);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
 }
@@ -353,9 +341,34 @@ const steps = [
   color: var(--color-accent);
 }
 
-.hero-source {
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
+/* The quote, written on the board in chalk */
+.chalk-quote {
+  display: grid;
+  align-content: center;
+  gap: var(--space-md);
+  margin: 0;
+  font-family: var(--font-hand);
+}
+
+.chalk-quote blockquote {
+  margin: 0;
+}
+
+.chalk-text {
+  font-size: var(--text-chalk);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+}
+
+.chalk-mark {
+  text-decoration: underline var(--color-chalk-accent);
+  text-decoration-thickness: var(--stroke-rule);
+  text-underline-offset: 0.18em;
+}
+
+.chalk-source {
+  color: var(--color-chalk-muted);
+  font-size: var(--text-xl);
 }
 
 .hero-board {

@@ -47,6 +47,7 @@
   --color-board-deep: var(--ref-board-900);
   --color-chalk: var(--ref-chalk);
   --color-chalk-muted: var(--ref-chalk-muted);
+  --color-chalk-accent: var(--ref-chalk-green);
 
   /* Globe beside the hero quote – an illustration, so it keeps its colours in both themes */
   --color-globe-ocean: var(--ref-leaf-50);
@@ -104,7 +105,6 @@
   --text-h1: var(--ref-font-size-4xl);
   --text-display: var(--ref-font-size-5xl);
   --text-chalk: var(--ref-font-size-chalk);
-  --text-quote: var(--ref-font-size-quote);
 
   --weight-body: var(--ref-font-weight-regular);
   --weight-medium: var(--ref-font-weight-medium);
