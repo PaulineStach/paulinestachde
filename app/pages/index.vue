@@ -313,16 +313,17 @@ const steps = [
         <div class="material-text">
           <h2 id="material-title">Lernmaterial</h2>
           <p class="text-lg">
-            Kostenlose Übungen für Ihre Mitarbeitenden: Wortschatz für den Arbeitsplatz, Grammatik
-            auf einen Blick und Tipps für die Prüfung. Den Anfang macht ein kleines Artikeltraining.
+            Übungen für Deutsch im IT-Alltag: Artikel, Satzbau und der richtige Ton in E-Mails.
+            Einen Ausschnitt können Sie ausprobieren – das vollständige Material schalte ich für
+            meine Kunden frei.
           </p>
-          <BaseButton to="/material" variant="quiet">Zum Lernmaterial</BaseButton>
+          <BaseButton to="/material" variant="quiet">Übungen ausprobieren</BaseButton>
         </div>
 
         <ul class="sample-words" aria-label="Beispielwörter mit Artikel">
-          <li><span class="article article--der">der</span> Dienstplan</li>
-          <li><span class="article article--die">die</span> Schicht</li>
-          <li><span class="article article--das">das</span> Werkzeug</li>
+          <li><span class="article article--der">der</span> Kunde</li>
+          <li><span class="article article--die">die</span> Schnittstelle</li>
+          <li><span class="article article--das">das</span> Ticket</li>
         </ul>
       </div>
     </section>
