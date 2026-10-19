@@ -146,7 +146,7 @@ const steps = [
           <h2 id="fuer-wen-title">Wo es im Alltag hakt</h2>
           <p class="text-lg">
             Sie haben internationale Mitarbeitende eingestellt oder planen es. Fachlich passt alles
-            – aber im Alltag hakt es an der Sprache. Vielleicht kennen Sie das:
+            – aber im Alltag gibt es sprachliche Probleme. Vielleicht kennen Sie das:
           </p>
         </div>
         <div>
