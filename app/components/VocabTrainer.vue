@@ -28,7 +28,7 @@ const right = ref(0)
 
 const pickedArticle = ref<Article | null>(null)
 const pluralInput = ref('')
-const pluralResult = ref<'exact' | 'spelling' | 'wrong' | null>(null)
+const pluralResult = ref<AnswerResult | null>(null)
 
 const nextButton = useTemplateRef<HTMLButtonElement>('nextButton')
 const pluralField = useTemplateRef<HTMLInputElement>('pluralField')
@@ -79,32 +79,13 @@ async function chooseArticle(article: Article) {
   nextButton.value?.focus()
 }
 
-/** Compares case-insensitively; ae/oe/ue/ss for ä/ö/ü/ß count, but are pointed out */
-function fold(text: string) {
-  return text
-    .trim()
-    .toLowerCase()
-    .replace(/^die\s+/, '')
-    .replaceAll('ä', 'ae')
-    .replaceAll('ö', 'oe')
-    .replaceAll('ü', 'ue')
-    .replaceAll('ß', 'ss')
-}
-
 async function checkPlural() {
   const word = current.value
   if (!word?.plural || pluralResult.value) return
   const typed = pluralInput.value.trim().replace(/^die\s+/i, '')
   if (!typed) return
-  if (word.plural.some((form) => form.toLowerCase() === typed.toLowerCase())) {
-    pluralResult.value = 'exact'
-    right.value++
-  } else if (word.plural.some((form) => fold(form) === fold(typed))) {
-    pluralResult.value = 'spelling'
-    right.value++
-  } else {
-    pluralResult.value = 'wrong'
-  }
+  pluralResult.value = compareAnswer(typed, word.plural)
+  if (pluralResult.value !== 'wrong') right.value++
   await nextTick()
   nextButton.value?.focus()
 }
