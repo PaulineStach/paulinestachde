@@ -66,7 +66,7 @@ const steps = [
           </p>
           <div class="hero-pitch">
             <h1 class="hero-title">
-              <span class="hero-accent">Deutsch</span>, das im Betrieb ankommt
+              Die Fachkräfte sind da. <span class="hero-accent">Die Sprache kommt noch.</span>
             </h1>
             <p class="lead">
               Auf Ihre Branche zugeschnitten – als Einzeltraining oder in der Gruppe, vor Ort oder
@@ -129,26 +129,22 @@ const steps = [
 
     <!-- Who it is for -->
     <section id="fuer-wen" class="section" aria-labelledby="fuer-wen-title">
-      <div class="wrap stack">
-        <h2 id="fuer-wen-title" class="statement">
-          Die Fachkräfte sind da. <span class="statement-accent">Die Sprache kommt noch.</span>
-        </h2>
-        <div class="split">
-          <div class="split-intro">
-            <p class="text-lg">
-              Sie haben internationale Mitarbeitende eingestellt oder planen es. Fachlich passt
-              alles – aber im Alltag hakt es an der Sprache. Vielleicht kennen Sie das:
-            </p>
-          </div>
-          <div>
-            <ul class="situations">
-              <li v-for="item in situations" :key="item">{{ item }}</li>
-            </ul>
-            <p class="text-lg after-list">
-              Ich unterrichte die Sprache, die Ihr Team bei der Arbeit wirklich braucht – ob in
-              Pflege, Handwerk, Logistik, Gastronomie, Industrie oder IT.
-            </p>
-          </div>
+      <div class="wrap split">
+        <div class="split-intro">
+          <h2 id="fuer-wen-title">Wo es im Alltag hakt</h2>
+          <p class="text-lg">
+            Sie haben internationale Mitarbeitende eingestellt oder planen es. Fachlich passt alles
+            – aber im Alltag hakt es an der Sprache. Vielleicht kennen Sie das:
+          </p>
+        </div>
+        <div>
+          <ul class="situations">
+            <li v-for="item in situations" :key="item">{{ item }}</li>
+          </ul>
+          <p class="text-lg after-list">
+            Ich unterrichte die Sprache, die Ihr Team bei der Arbeit wirklich braucht – ob in
+            Pflege, Handwerk, Logistik, Gastronomie, Industrie oder IT.
+          </p>
         </div>
       </div>
     </section>
@@ -462,18 +458,6 @@ const steps = [
 .after-list {
   margin-block-start: var(--space-md);
   max-inline-size: var(--layout-measure);
-}
-
-/* A big two-part statement: the situation, then (in green) what is missing */
-.statement {
-  max-inline-size: 20ch;
-  font-size: var(--text-display);
-  line-height: var(--leading-display);
-  letter-spacing: var(--tracking-display);
-}
-
-.statement-accent {
-  color: var(--color-heading-accent);
 }
 
 /* Promises: a green headline and three soft green cards */
