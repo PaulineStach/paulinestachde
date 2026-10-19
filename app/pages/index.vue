@@ -79,17 +79,30 @@ const steps = [
         </div>
 
         <ChalkBoard class="hero-board">
-          <figure class="chalk-quote">
-            <blockquote>
-              <p class="chalk-text">
-                „Die Grenzen meiner <span class="chalk-mark">Sprache</span> bedeuten die Grenzen
-                meiner <span class="chalk-mark">Welt</span>.“
-              </p>
-            </blockquote>
-            <figcaption class="chalk-source">
-              Ludwig Wittgenstein, <cite>Tractatus logico-philosophicus</cite> 5.6
-            </figcaption>
-          </figure>
+          <div
+            class="lesson"
+            role="img"
+            aria-label="Tafelbild zum Thema Schichtübergabe: der Dienstplan, die Übergabe, das Protokoll, drei Redemittel und der Satz „Ich kann morgen früher anfangen.“"
+            translate="no"
+          >
+            <p class="lesson-topic">Thema: Schichtübergabe</p>
+            <div class="lesson-columns">
+              <ul class="lesson-list lesson-words">
+                <li><span class="chalk-der">der</span> Dienstplan</li>
+                <li><span class="chalk-die">die</span> Übergabe</li>
+                <li><span class="chalk-das">das</span> Protokoll</li>
+              </ul>
+              <ul class="lesson-list lesson-phrases">
+                <li>Was ist heute passiert?</li>
+                <li>Die Maschine läuft wieder.</li>
+                <li>Bitte noch Material bestellen.</li>
+              </ul>
+            </div>
+            <p class="lesson-sentence">
+              Ich <span class="chalk-verb">kann</span> morgen früher
+              <span class="chalk-verb">anfangen</span>.
+            </p>
+          </div>
         </ChalkBoard>
       </div>
     </section>
@@ -344,7 +357,7 @@ const steps = [
 }
 
 .hero-title {
-  font-size: var(--text-display);
+  font-size: var(--text-h1);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
 }
@@ -353,47 +366,79 @@ const steps = [
   color: var(--color-accent);
 }
 
-/* The quote, written on the board in chalk */
-.chalk-quote {
+/* A lesson on the board: topic, vocabulary with articles, phrases, one example sentence */
+.lesson {
   display: grid;
-  align-content: center;
-  gap: var(--space-md);
-  margin: 0;
+  align-content: space-between;
+  gap: var(--space-lg);
   font-family: var(--font-hand);
-}
-
-.chalk-quote blockquote {
-  margin: 0;
-}
-
-.chalk-text {
-  font-size: var(--text-chalk);
+  font-size: var(--text-xl);
   font-weight: var(--weight-medium);
   line-height: var(--leading-snug);
 }
 
-.chalk-mark {
-  text-decoration: underline var(--color-chalk-accent);
-  text-decoration-thickness: var(--stroke-rule);
-  text-underline-offset: 0.18em;
+.lesson-topic {
+  color: var(--color-chalk-muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
 }
 
-.chalk-source {
+.lesson-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--space-md) var(--space-xl);
+}
+
+.lesson-list {
+  display: grid;
+  gap: var(--space-2xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson-words {
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  white-space: nowrap;
+}
+
+.lesson-phrases li::before {
+  content: '– ';
   color: var(--color-chalk-muted);
-  font-size: var(--text-xl);
+}
+
+.chalk-der {
+  color: var(--color-chalk-der);
+}
+
+.chalk-die {
+  color: var(--color-chalk-die);
+}
+
+.chalk-das {
+  color: var(--color-chalk-das);
+}
+
+.chalk-verb {
+  text-decoration: underline wavy var(--color-chalk-die);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
 }
 
 .hero-board {
-  min-block-size: 24rem;
+  align-self: center;
 }
 
 @media (min-width: 52rem) {
   .hero-inner {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
   }
 
+  /* A landscape board, like the one in a classroom */
   .hero-board {
-    min-block-size: 34rem;
+    aspect-ratio: 3 / 2;
   }
 }
 

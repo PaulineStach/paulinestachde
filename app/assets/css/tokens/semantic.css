@@ -47,7 +47,9 @@
   --color-board-deep: var(--ref-board-900);
   --color-chalk: var(--ref-chalk);
   --color-chalk-muted: var(--ref-chalk-muted);
-  --color-chalk-accent: var(--ref-chalk-green);
+  --color-chalk-der: var(--ref-chalk-blue);
+  --color-chalk-die: var(--ref-chalk-red);
+  --color-chalk-das: var(--ref-chalk-green);
 
   /* World map in the About section – an illustration, so it keeps its colours in both themes */
   --color-map-land: var(--ref-leaf-100);
