@@ -675,13 +675,14 @@ const steps = [
   font-size: var(--text-sm);
 }
 
+/* Thin and italic: a quotation, set apart from the bold headings around it */
 .stations-quote blockquote {
   margin: 0;
   color: var(--color-text);
   font-size: var(--text-h3);
-  font-weight: var(--weight-heading);
-  line-height: var(--leading-heading);
-  letter-spacing: var(--tracking-heading);
+  font-style: italic;
+  font-weight: var(--weight-body);
+  line-height: var(--leading-snug);
 }
 
 .stations-accent {
