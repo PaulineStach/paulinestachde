@@ -101,6 +101,7 @@
   --text-h1: var(--ref-font-size-4xl);
   --text-display: var(--ref-font-size-5xl);
   --text-chalk: var(--ref-font-size-chalk);
+  --text-quote: var(--ref-font-size-quote);
 
   --weight-body: var(--ref-font-weight-regular);
   --weight-medium: var(--ref-font-weight-medium);
