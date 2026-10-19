@@ -14,7 +14,7 @@ const promises = [
     icon: 'M5.5 3h13A1.5 1.5 0 0 1 20 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5v-15A1.5 1.5 0 0 1 5.5 3ZM12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-2 5.5L9 17l3-1.5 3 1.5-1-4.5',
   },
   {
-    text: 'Geübt wird mit Material aus Ihrem Betrieb',
+    text: 'Praxisnahes Material aus Ihrem Arbeitsalltag',
     icon: 'M6.5 4H5.5A1.5 1.5 0 0 0 4 5.5v14A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5v-14A1.5 1.5 0 0 0 18.5 4h-1M9 3h6v2.5H9V3Zm-1 8.5h8M8 15h8M8 18.5h4.5',
   },
   {
