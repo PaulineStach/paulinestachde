@@ -82,25 +82,28 @@ const steps = [
           <div
             class="lesson"
             role="img"
-            aria-label="Tafelbild zum Thema Daily Scrum am Morgen: das Daily, der Tagesplan, die Aufgabe, drei Redemittel für Smalltalk und Tagesplanung und der Satz „Heute rufe ich den Kunden an.“"
+            aria-label="Tafelbild zum Thema Feedback in der Retro, Grammatik Nebensätze: die Retro, der Blocker, das Backlog, drei Satzanfänge für Feedback und der Satz „Gut lief, dass wir den Sprint geschafft haben.“"
             translate="no"
           >
-            <p class="lesson-topic">Thema: Daily Scrum am Morgen</p>
+            <div class="lesson-head">
+              <p class="lesson-topic">Thema: Feedback in der Retro</p>
+              <p class="lesson-grammar">Grammatik: Nebensätze – das Verb steht am Ende</p>
+            </div>
             <div class="lesson-columns">
               <ul class="lesson-list lesson-words">
-                <li><span class="chalk-das">das</span> Daily</li>
-                <li><span class="chalk-der">der</span> Tagesplan</li>
-                <li><span class="chalk-die">die</span> Aufgabe</li>
+                <li><span class="chalk-die">die</span> Retro</li>
+                <li><span class="chalk-der">der</span> Blocker</li>
+                <li><span class="chalk-das">das</span> Backlog</li>
               </ul>
               <ul class="lesson-list lesson-phrases">
-                <li>Wie war dein Wochenende?</li>
-                <li>Gestern habe ich … erledigt.</li>
-                <li>Heute kümmere ich mich um …</li>
+                <li>Gut lief, dass&nbsp;…</li>
+                <li>Mir ist aufgefallen, dass&nbsp;…</li>
+                <li>Wie wäre es, wenn wir&nbsp;…?</li>
               </ul>
             </div>
             <p class="lesson-sentence">
-              Heute <span class="chalk-verb">rufe</span> ich den Kunden
-              <span class="chalk-verb">an</span>.
+              Gut lief, <span class="chalk-verb">dass</span> wir den Sprint geschafft
+              <span class="chalk-verb">haben</span>.
             </p>
           </div>
         </ChalkBoard>
@@ -390,11 +393,21 @@ const steps = [
   line-height: var(--leading-snug);
 }
 
+.lesson-head {
+  display: grid;
+  gap: var(--space-3xs);
+}
+
 .lesson-topic {
   color: var(--color-chalk-muted);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25em;
+}
+
+.lesson-grammar {
+  color: var(--color-chalk-muted);
+  font-size: var(--text-lg);
 }
 
 .lesson-columns {
