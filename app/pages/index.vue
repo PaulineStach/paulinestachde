@@ -82,7 +82,7 @@ const steps = [
           <div
             class="lesson"
             role="img"
-            aria-label="Tafelbild zum Thema Feedback für eine Produktpräsentation, Grammatik Nebensätze: die Präsentation, der Hinweis, das Feedback, drei Satzanfänge für Feedback und der Satz „Gut lief, dass du die Zahlen so klar erklärt hast.“"
+            aria-label="Tafelbild zum Thema Feedback für eine Produktpräsentation, Grammatik Nebensätze: die Präsentation, der Hinweis, das Feedback und drei Satzanfänge für Feedback"
             translate="no"
           >
             <div class="lesson-head">
@@ -101,10 +101,6 @@ const steps = [
                 <li>Wie wäre es, wenn wir&nbsp;…?</li>
               </ul>
             </div>
-            <p class="lesson-sentence">
-              Gut lief, <span class="chalk-verb">dass</span> du die Zahlen so klar erklärt
-              <span class="chalk-verb">hast</span>.
-            </p>
           </div>
         </ChalkBoard>
       </div>
@@ -447,12 +443,6 @@ const steps = [
 
 .chalk-das {
   color: var(--color-chalk-das);
-}
-
-.chalk-verb {
-  text-decoration: underline wavy var(--color-chalk-die);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.3em;
 }
 
 .hero-board {
