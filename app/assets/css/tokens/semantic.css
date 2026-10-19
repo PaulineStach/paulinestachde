@@ -134,6 +134,8 @@
   --size-control: var(--ref-size-control);
   --size-icon: var(--ref-size-icon);
   --size-portrait: var(--ref-size-portrait);
+  --size-card: var(--ref-size-card);
+  --size-card-icon: var(--ref-size-card-icon);
 
   /* Motion */
   --transition-fast: var(--ref-duration-fast) var(--ref-easing-standard);

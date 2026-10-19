@@ -7,11 +7,20 @@ useSeoMeta({
     'Berufsbezogene Deutschkurse für Unternehmen und ihre internationalen Mitarbeitenden: Einzeltraining, Gruppenkurse und Prüfungsvorbereitung – vor Ort oder online.',
 })
 
-const credentials = [
-  'Master of Education',
-  '3 Jahre Goethe-Institut Irland',
-  'BAMF-zugelassene Lehrkraft für Integrationskurse',
-  'Erfahrung als Prüferin',
+/* What a company can rely on – each with a line icon (24×24 paths) */
+const promises = [
+  {
+    text: 'BAMF-zugelassene Lehrkraft mit Erfahrung als Prüferin',
+    icon: 'M5.5 3h13A1.5 1.5 0 0 1 20 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 19.5v-15A1.5 1.5 0 0 1 5.5 3ZM12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-2 5.5L9 17l3-1.5 3 1.5-1-4.5',
+  },
+  {
+    text: 'Geübt wird mit Material aus Ihrem Betrieb',
+    icon: 'M6.5 4H5.5A1.5 1.5 0 0 0 4 5.5v14A1.5 1.5 0 0 0 5.5 21h13a1.5 1.5 0 0 0 1.5-1.5v-14A1.5 1.5 0 0 0 18.5 4h-1M9 3h6v2.5H9V3Zm-1 8.5h8M8 15h8M8 18.5h4.5',
+  },
+  {
+    text: 'Klarer Kursplan und ein verbindliches Angebot',
+    icon: 'M5 5h14a1.5 1.5 0 0 1 1.5 1.5v12.5A1.5 1.5 0 0 1 19 20.5H5A1.5 1.5 0 0 1 3.5 19V6.5A1.5 1.5 0 0 1 5 5Zm-1.5 4.5h17M8 3v4M16 3v4m-8.5 6h2m2 0h2m2 0h2m-9 3.5h2m2 0h2',
+  },
 ]
 
 const situations = [
@@ -95,9 +104,38 @@ const contactHints = [
             </p>
           </div>
         </ChalkBoard>
+      </div>
+    </section>
 
-        <ul class="credentials" aria-label="Qualifikationen">
-          <li v-for="item in credentials" :key="item">{{ item }}</li>
+    <!-- What a company can rely on -->
+    <section class="section section--promises" aria-labelledby="versprechen-title">
+      <div class="wrap stack">
+        <header class="section-head">
+          <h2 id="versprechen-title" class="accent-title">
+            Deutschtraining, das zu Ihrem Betrieb passt
+          </h2>
+          <p class="text-lg">
+            Vom Einzeltraining bis zum Gruppenkurs – mit Wortschatz und Situationen aus Ihrem
+            Arbeitsalltag.
+          </p>
+        </header>
+        <ul class="cards">
+          <li v-for="item in promises" :key="item.text" class="card">
+            <svg
+              class="card-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path :d="item.icon" />
+            </svg>
+            <p class="card-text">{{ item.text }}</p>
+          </li>
         </ul>
       </div>
     </section>
@@ -388,44 +426,11 @@ const contactHints = [
   .hero-board {
     min-block-size: 34rem;
   }
-
-  .credentials {
-    grid-column: 1 / -1;
-  }
 }
 
 .lead {
   font-size: var(--text-xl);
   line-height: var(--leading-snug);
-}
-
-.credentials {
-  display: grid;
-  gap: var(--space-xs);
-  margin: 0;
-  padding: var(--space-md) 0 0;
-  border-block-start: 1px solid var(--color-border);
-  list-style: none;
-  color: var(--color-text-muted);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-strong);
-}
-
-@media (min-width: 40rem) {
-  .credentials {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 64rem) {
-  .credentials {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .credentials li + li {
-    padding-inline-start: var(--space-sm);
-    border-inline-start: 1px solid var(--color-border);
-  }
 }
 
 /* Sections */
@@ -484,6 +489,56 @@ const contactHints = [
 .after-list {
   margin-block-start: var(--space-md);
   max-inline-size: var(--layout-measure);
+}
+
+/* Promises: a green headline and three soft green cards */
+.section--promises {
+  padding-block-start: var(--space-xl);
+}
+
+.section--promises .section-head {
+  max-inline-size: none;
+}
+
+.accent-title {
+  color: var(--color-heading-accent);
+  font-size: var(--text-h1);
+  letter-spacing: var(--tracking-display);
+}
+
+.cards {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-xl);
+  min-block-size: var(--size-card);
+  padding: var(--space-lg);
+  border-radius: var(--radius-card);
+  background: var(--color-card);
+}
+
+.card-icon {
+  inline-size: var(--size-card-icon);
+  block-size: var(--size-card-icon);
+}
+
+.card-text {
+  max-inline-size: 22ch;
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+}
+
+@media (min-width: 52rem) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* Offer */
