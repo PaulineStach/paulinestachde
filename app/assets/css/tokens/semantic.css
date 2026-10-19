@@ -67,9 +67,9 @@
   --color-das-subtle: var(--ref-green-100);
 
   /* Logo mark (inverts with the theme so it always stands out from the page) */
-  --color-logo-bg: var(--ref-neutral-900);
-  --color-logo-fg: var(--ref-neutral-50);
-  --color-logo-accent: var(--ref-blue-300);
+  --color-logo-bg: var(--ref-neutral-0);
+  --color-logo-fg: var(--ref-leaf-600);
+  --color-logo-border: var(--ref-neutral-300);
 
   /* Status */
   --color-danger: var(--ref-red-500);
@@ -185,9 +185,7 @@
     --color-die-subtle: var(--ref-red-800);
     --color-das: var(--ref-green-300);
     --color-das-subtle: var(--ref-green-800);
-    --color-logo-bg: var(--ref-neutral-100);
-    --color-logo-fg: var(--ref-neutral-900);
-    --color-logo-accent: var(--ref-blue-600);
+    --color-logo-border: var(--ref-neutral-0);
   }
 }
 
@@ -219,9 +217,7 @@
   --color-die-subtle: var(--ref-red-800);
   --color-das: var(--ref-green-300);
   --color-das-subtle: var(--ref-green-800);
-  --color-logo-bg: var(--ref-neutral-100);
-  --color-logo-fg: var(--ref-neutral-900);
-  --color-logo-accent: var(--ref-blue-600);
+  --color-logo-border: var(--ref-neutral-0);
 }
 
 :root[data-theme='light'] {
