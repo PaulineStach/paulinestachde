@@ -158,8 +158,8 @@ const steps = [
             <li v-for="item in situations" :key="item">{{ item }}</li>
           </ul>
           <p class="text-lg after-list">
-            Ich unterrichte die Sprache, die Ihr Team bei der Arbeit wirklich braucht – ob in
-            Pflege, Handwerk, Logistik, Gastronomie, Industrie oder IT.
+            Ich unterrichte die Sprache, die Ihr Team bei der Arbeit wirklich braucht – ob in IT,
+            Logistik, Beratung, Pflege oder Handwerk.
           </p>
         </div>
       </div>
